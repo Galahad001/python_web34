@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::before{
+            color: red;
+        }
+        p::after{
+            color: blue;
+        }
+        p::before{
+            content:'Start ' 'a';
+        }
+        p::after{
+            content: ' End';
+        }
+
+        /* Cписок */
+        ol { 
+            list-style-type: none;
+            counter-reset: number; 
+        }
+        ol li::before {
+            content: counter(number) ') ';
+            counter-increment: number; /*сбрасывает счетчик CSS до заданного значения*/
+        }
+ 
+        /* маркированный спсикок */
+        ul {
+            list-style-type: none;
+            font-style: italic; 
+        }
+        ul li::before { 
+            content: '- ';
+            color: #04b548; 
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- псевдоэлемента ::before для стилей списков -->
+    <!-- Зачастую хочется изменить нумерацию в упорядоченном списке, задав для него скобки после номера, а для
+        неупорядоченного списка — тире вместо маркера. Для CSS-стили для списков этого необходимо отключить стандартную нумерацию или маркеры с помощью свойства list-style-type: none. А затем использовать псевдоэлемент ::before для элемента <li>. -->
+
+    <!-- Что такое псевдоэлементы ::before и ::after? -->
+    <!-- Это означает что их нет в коде html. Появляются исключительно в коде css3 -->
+    <!-- По поводу :before и :after можно сказать, что эти псевдоэлементы позволяют добавить некий контент (текстовое или визуальное содержимое) перед текстом элемента или в конце элемента -->
+
+    <!-- свойство content является обязательным для псевдоэлементов ::before ::after. 
+    Если его не указать то на странице ничего не отобразится -->
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, labore! Iusto voluptate dolorem, totam pariatur fugiat modi, obcaecati molestias natus aspernatur, in odit suscipit dolorum consequuntur libero molestiae laborum? Itaque.</p>
+
+
+    <ol>
+        <li>фыв</li>
+        <li>йцу</li>
+        <li>ячс</li>
+    </ol>
+
+
+    <ul>
+        <li>ert</li>
+        <li>dfg</li>
+        <li>sdf</li>
+    </ul>
+</body>
+</html>
