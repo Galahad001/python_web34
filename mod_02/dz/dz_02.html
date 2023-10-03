@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            list-style-position: inside;
+        }
+        .mark {
+            list-style-type: none;
+            list-style-image: url('icons/unchecked_16.png');
+        }
+        ul li{
+            padding: 10px 0px 10px 20px;
+        }
+        /* ul li::before{
+            content: url('icons/unchecked_16.png');
+            padding-right: 17px;
+        } */
+        ul li::after{
+            content: '\2718';
+            padding-left: 15px;
+            color: red;
+            font-size: 12px;
+        }
+        li{
+            background-color: rgb(142, 142, 240);
+        }
+        .ot{
+            background-color: aquamarine;
+        }
+        .mark2{
+            list-style-type: none;
+            list-style-image: url('icons/checked_16.png');
+            background-color: grey;
+        }
+        span{
+           text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Мой лист</h1>
+
+        <ul>
+            <li class="mark ot" >Яйца</li>
+            <li class="mark2 " ><span>Лимон</span></li>
+            <li class="mark ot">Креветки</li>
+            <li class="mark2"><span>Лайм</span></li>
+            <li class="mark ot">Перец</li>
+            <li class="mark" >Помидоры</li>
+            <li class="mark2 ot"><span>Лук</span></li>
+            <li class="mark" >Хлеб</li>
+            <li class="mark ot">Чеснок</li>
+            <li class="mark" >Напитки</li>
+        </ul>
+
+    </div>
+    
+</body>
+</html>

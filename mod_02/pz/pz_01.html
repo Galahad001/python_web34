@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        ul{
+            list-style-type: none;
+        }
+
+        .winter li{
+            list-style-type: none;
+            list-style-image: url('../icons/winter_16.png');
+        }
+        .spring li{
+            list-style-type: none;
+            list-style-image: url('../icons/spring_16.png');
+        }
+        .summer li{
+            list-style-type: none;
+            list-style-image: url('../icons/summer_16.png');
+        }
+        .autumn li{
+            list-style-type: none;
+            list-style-image: url('../icons/autumn_16.png');
+        }
+
+        
+        .glav_li::before{
+            content: "> ";
+            font-weight: 900;
+            font-size: 20px;
+        }
+        span{
+            position: relative;
+            top: -3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Сезон</h1>
+
+        <ul>
+            <li class="glav_li"><span>Зима</span>
+                <ul class="winter">
+                    <li>Декабрь</li>
+                    <li>Январь</li>
+                    <li>Февраль</li>
+                </ul>
+            </li>
+
+            <li class="glav_li">Весна
+                <ul class="spring">
+                    <li>Март</li>
+                    <li>Апрель</li>
+                    <li>Май</li>
+                </ul>
+            </li>
+
+            <li class="glav_li">Лето
+                <ul class="summer">
+                    <li>Июнь</li>
+                    <li>Июль</li>
+                    <li>Август</li>
+                </ul>
+            </li>
+
+            <li class="glav_li">Осень
+                <ul class="autumn">
+                    <li>Сентябрь</li>
+                    <li>Октябрь</li>
+                    <li>Ноябрь</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+</body>
+</html>

@@ -1,42 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        div{
-            word-spacing: 20px;  /* интервал между словами*/
-            letter-spacing: 10px;   /* установить интервал между символами */
-            text-transform: capitalize; /*позволяет изменить регистр текста  capitalize | lowercase | uppercase | none*/
-
-            text-decoration: underline; /* добавляет оформление текста в виде подчеркивания 
-            underline | line-through | overline | none*/
-
-            /* text-decoration-line: line-through | underline | overline; 
-            определяет вид линии*/
-
-            /* text-decoration-style: dotted; */
-            /* Вид линии определяется */
-                /* solid — сплошная одинарная линия
-                 double — двойная линия.
-                 dotted — точечная линия.
-                 dashed — пунктирная линия.
-                 wavy — волнистая линия. */
-
-            /* text-decoration-color: blue; */
-            /* определяет цвет линии */
-
-            /* text-decoration: overline  dotted  blue; */
-
-            text-shadow: 5px 4px 2px black, 7px 6px 5px gray;
-            /* позволяет добавить тень к тексту */
-        }
-    </style>
+<!-- Базовая структура файла html создается с помощью команды ( ! потом нажать tab ) -->
+<!DOCTYPE html>  <!-- Тег дает понять с каким документом работает браузер -->
+<html lang="en"> <!-- Корневой тег. Родитель для всех тегов. -->
+<head>           <!-- "Шапка страницы", теги вложеные в этот тег не видны на странице. Тут описываем настроки нашего сайта -->
+    <meta charset="UTF-8">   <!-- Кодировка которая аозволяет работать с Русскими буквами -->
+    <title>Document</title>  <!-- Тег задает название, которое видно во вкладке в браузере -->
 </head>
-<body>
+<body>           <!-- Все теги которые нужно вывести на страницу. Надо помещать в тег body -->
     
+    <p>Тег p - для небольших предложений</p>
 
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta illo error consequuntur commodi, obcaecati cum culpa similique. A excepturi deserunt ipsa. Nam id asperiores facilis, velit aut maiores magni accusamus!</div>
+    <h1>Заголовок 1 уровня</h1>
+    <h2>Заголовок 2 уровня</h2>
+    <h3>Заголовок 3 уровня</h3>
+    <h4>Заголовок 4 уровня</h4>
+    <h5>Заголовок 5 уровня</h5>
+    <h6>Заголовок 6 уровня</h6>
+
+    <div>
+        <p>div - это контейнер, в который мы можем сложить другие теги:</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sequi provident, fugit officiis animi numquam voluptatum assumenda molestiae cumque adipisci soluta. In quasi ipsum omnis sint soluta explicabo cupiditate aut.
+    </div>
+
+    <br>
+
+    <div>
+        Теги - div, p, h1-h6. Это блочные теги. Они занимают всю ширину браузера.
+    </div>
+
+    <p>-------------Отделим содержимое>-------------</p>
+
+    <p>Есть строчные теги - являются непосредственной частью строки. Заполняют пространство в пределам переданного им содержимого</p>
+
+    <p>Например: тег i-<i>курсив</i>, тег b-<b>жирный шрифт</b>, тег span-<span>Строковый контейнер</span></p>
+
+
+    <p>-------------Отделим содержимое>-------------</p>
+
+    <p>Также есть одиночные теги (не имеют закрывающего тега):</p>
+    <p>Тег hr - создает линию на всю ширину:</p>
+    <hr>
+
+    <p>Тег br - создает перенос следуюшего за ним текста на следующую строку:</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ipsum temporibus <br>praesentium dolores, natus placeat <br> dicta voluptates. Aliquid aliquam provident repellat!</p>
+
 </body>
 </html>
