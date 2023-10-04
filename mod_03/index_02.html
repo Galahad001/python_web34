@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            vertical-align: top;
+            float: left;
+            margin-right: 30px;
+            
+        }
+
+        div{
+            display: flex; /*Выравнивает размеры блока*/
+            margin-top: 50px;
+        }
+
+        .bordered{
+            padding: 3px;
+            border: 5px double black; /*Свойство создает линию вокруг границы элемента*/
+            /* 
+                solid - одна сплошная линия 
+                dashed - пунктирная линия
+                double - двойная линия
+                1rem solid - создает рамку
+                4mm ridge rgba(211, 220, 50, .6) - создает двойную рамку
+            */  
+        }
+
+        .radius{
+            border-radius: 20px; /*Скругление границ блока*/
+        }
+
+        .shadow{
+            /* box-shadow: 10px 10px 15px black; */  
+            box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.65); /*Создание тени. Первое значение - сдвиг по гиризонтали, второй аргумент - сдвиг по вертикали, третий - размытие тени, четвертый - цвет тени*/
+        }
+
+
+        /* Знакомство с псевдокласс :hover */
+        /* 
+        Псевдоэлементы — это элементы, которых не существует в HTML-разметке. Они создаются и позиционируются исключительно при помощи CSS. Чаще всего используются для создания различных декоративных элементов
+         */
+         /* Как применить  - к имени класса или иени тега добавляем псевдоклас таким образом. 
+                    .hov:hover  */
+
+        /* Псевдокласс :hover срабатывает, когда пользователь наводит на элемент мышью */
+        .hov:hover{
+            box-shadow: 15px 15px 18px rgba(0, 0, 0, 0.65);
+            cursor: pointer; /*Новое свойство - меняет форму курсора */
+        }
+
+        .hov2:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .hov3:hover{
+            border-style: double;
+            border-color: aqua;
+            border-width: 5px;
+            border-radius: 30px;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <!-- Растягивание картинок по ширине и высоте -->
+     <!-- width-ширина, height-высота -->
+
+    <div>
+        <img class="bordered radius shadow hov" src="img/milk-bottle.jpg" alt="молоко" width="320" height="240">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, atque explicabo! Temporibus, illum incidunt. Doloremque minus adipisci, iure quam quo eveniet nobis quaerat dolorum itaque assumenda. Sequi placeat magnam veritatis.
+    </div>
+
+    <div>
+        <img class="bordered radius shadow hov2" src="img/milk-bottle.jpg" alt="молоко" width="620" height="340">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, atque explicabo! Temporibus, illum incidunt. Doloremque minus adipisci, iure quam quo eveniet nobis quaerat dolorum itaque assumenda. Sequi placeat magnam veritatis.
+    </div>
+
+    <div>
+        <img class="bordered radius shadow hov3" src="img/milk-bottle.jpg" alt="молоко" width="1200" height="640">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, atque explicabo! Temporibus, illum incidunt. Doloremque minus adipisci, iure quam quo eveniet nobis quaerat dolorum itaque assumenda. Sequi placeat magnam veritatis.
+    </div>
+
+
+    <!-- 
+        Также для изображений часто применяют различные
+эффекты при наведении курсора мыши. Для этого служит
+псевдокласс :hover:
+     -->
+
+
+</body>
+</html>

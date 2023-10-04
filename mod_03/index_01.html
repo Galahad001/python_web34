@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img{
-            /* float: right; */
-            display: block;
-            margin: auto;
-            margin-top: 100px;
-            /* 1-сдвиг в сторону, 2-сдвиг по вертикали, 3-оазмытие */
-            box-shadow: 6px 6px 10px rgba(1, 0, 0, 0.9) 
-        }
+       .im1{
+        vertical-align: text-top; /*Изменяет местоположение текста, используя для картинки css-свойство vertical-align*/
 
-        img:hover{
-            box-shadow: 15px 15px 20px rgba(1, 0, 0, 0.9)
-        }
+        float: right; /*Выравнивание по правому или левому краю*/
+        margin-right: 20px; /*отступ от правого края*/
+       }
 
-        /* img:hover{
-            opacity: 0.5;
-            cursor: pointer;
-        } */
+       .im2{
+        float: left;
+        vertical-align: text-top;
+        padding-right: 10px;
+       }
+
+       .p_r{
+        text-align: right;
+       }
+
+       .text_center{
+        text-align: center; /*Выравнивание по центру*/
+        margin-top: 50px;
+       }
+
+
+       .im3{
+        display: block;
+        margin: auto;
+       }
+        
     </style>
 </head>
 <body>
@@ -29,7 +40,34 @@
     <!-- Добавить изобрабражение в наше разметку можно с помощью тега <img> -->
     <!-- Он имеет два обязательных атрибута src и alt -->
 
-    <img src="img/python.png" alt="книги" width="500" height="250">
+    
+    <div>
+                <p class="p_r">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="im1" src="img/cocktail.jpg" alt="коктель">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem aliquam ipsam fugit rem ullam quasi eveniet placeat voluptatibus odit officia. Unde quam nostrum ex eius.
+
+            <h1>Вторая картинка</h1>
+            <img class="im2" src="img/coffee.jpg" alt="кофе">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere asperiores magnam architecto pariatur cupiditate fugiat quam expedita adipisci exercitationem a, excepturi accusantium sit? Veniam, nihil nulla. Consectetur repellendus adipisci, id sed quo, unde similique incidunt ab architecto fuga voluptas odio impedit quia exercitationem repellat molestiae voluptates vel rerum reiciendis, alias facere et tempora. Consequatur tenetur, rem fugiat perferendis unde doloremque fuga totam quo maxime illum molestias? Excepturi eaque doloribus quisquam architecto odio magni delectus aperiam laudantium consectetur deserunt! <br> Voluptates fugit quis nulla et enim harum, blanditiis voluptatum nemo non error labore soluta omnis quia reiciendis nihil, hic, consequuntur suscipit nesciunt?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, sunt. Quod necessitatibus rem vitae accusantium ex modi quibusdam, officiis, numquam alias eius, consequatur mollitia totam saepe neque cupiditate tempore sunt ut quos provident nam ad perferendis repellendus accusamus facere. Vel blanditiis porro praesentium consequatur nihil dolore aliquid, a saepe magni temporibus vero laudantium molestias suscipit ex ut quasi quod ducimus iusto labore cum voluptates ipsa. <br> Delectus dolore quos, reprehenderit facilis adipisci illo, esse accusamus vitae voluptate excepturi rem, et minus nihil eos nulla explicabo voluptatum dolores sit architecto perspiciatis possimus incidunt facere ea blanditiis? Quam dolores impedit consequatur perspiciatis quod.
+    </div>
+
+
+
+    <div class="text_center">
+        <h1>Примененние text-aligin:center, к классу text_center</h1>
+        <!-- Чтобы расположить по центру картинку. Можно отпозиционировать блочный элемент в котором она находится. Или перевести строчный элемент img в блочный -->
+        <img src="img/cook.jpg" alt="еда">
+    </div>
+
+
+    
+    <div>
+        <h1>Примененние display:block и margin:auto, к классу im3</h1>
+        <!-- Чтобы расположить по центру картинку. Можно отпозиционировать блочный элемент в котором она находится. Или перевести строчный элемент img в блочный -->
+        <img class="im3" src="img/muesli.jpg" alt="еда">
+    </div>
+
     
 </body>
 </html>
