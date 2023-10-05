@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 30px;
+        }
+
+        div{
+            width: 200px;
+            height: 250px;
+            background-image: url('img/abstract-bg.jpg');
+            background-repeat: no-repeat;
+            border: 2px solid black;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        #i1{
+            background-size: auto;
+        }
+        #i2{
+            background-size: 100% 100%;
+        }
+        #i3{
+            background-size: 100% auto;
+        }
+        #i4{
+            background-size: auto 100%;
+        }
+        #i5{
+            background-size: 50% 50%;
+        }
+        #i6{
+            background-size: contain;
+        }
+        #i7{
+            background-size: cover;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="i1">background-size: auto;</div>
+    <div id="i2"> background-size: 100% 100%;</div>
+    <div id="i3">background-size: 100% auto;</div>
+    <div id="i4"> background-size: auto 100%;;</div>
+    <div id="i5">  background-size: 50% 50%;</div>
+    <div id="i6">background-size: contain;</div>
+    <div id="i7"> background-size: cover;</div>
+
+
+    <!-- 
+    cover изменяет масштаб фона с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока, а contain сохраняет пропорции так, чтобы картинка целиком поместилась внутрь блока.
+     -->
+
+    
+</body>
+</html>
