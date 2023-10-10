@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #test{
+        box-sizing: border-box;
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        border: 3px solid red;
+        border-radius: 100%;
+    }
+
+    #test{
+        animation-name: myTest;
+        /* Даем имя анимации */
+        animation-duration: 5s;
+        /* Длительность анимации за один цикл */
+        animation-timing-function: linear;
+        /* Определяет как проходит анимация в течение одного цикла (быстрое начало, медленая середина, быстрый конец.) */
+        animation-delay: 0.5s;
+        /* Время задержки перед началом анимации */
+        animation-iteration-count: infinite;
+        /* Сколько раз повторится цикл. Значение infinite - бесконечное повторение */
+        animation-direction: alternate;
+        /* Определяет направление анимации. Имеет 3 значения -
+        -normal, -reverse, 
+        -alternate - анимация меняет направление в  каждом цикле. 
+        */
+    }
+
+    /*  */
+    @keyframes myTest{
+        from{
+            width: 300px;
+            height: 300px;
+        }
+        to{
+            width: 500px;
+            height: 500px;
+        }
+    }
+</style>
+<body>
+
+    <!-- 
+        CSS свойство animation  — это краткая запись для
+        animation-name, animation-duration, animation-timingfunction, animation-delay, animation-iteration-count,
+        animation-direction, animation-fill-mode, animation-play-state.
+     -->
+    
+     <div id="test">
+
+     </div>
+</body>
+</html>

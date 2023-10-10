@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .transition_css{
+            width: 90%;
+            margin: auto;
+            height: auto;
+        }
+        .a_transition{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            height: 30px;
+            width: 70px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 1px solid rgb(83, 80, 74);
+            background-color: rgb(230, 215, 188);
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: sans-serif;
+            box-shadow: 5px 5px 10px black;
+            transition: all 0.9s ease 0s;
+            /* Первое значение определяет
+                список свойств, чьи переходы должны анимироваться.
+                Второе определяет время перехода. Третье значение
+                определяет временную функцию(Перехрд начинается медленно. Потом разгоняется и в конце замедляется ). Четвертое определяет
+                время задержки до начала анимации. */
+
+                /* 
+                Стоит отметить, что переход можно применить к той
+                паре значений свойств, у которых можно определить измеряемую среднюю точку. Например, для свойства width, можно применить переход от значения 400px до 800px,
+                так есть некая средняя точка 600px. А для элемента, у которого изменяется свойство display: none на display: block, невозможно применить переход, так как определить некую измеряемую среднюю точку, между этими значениями, нельзя. Так же невозможно применить переход
+                от width: auto до width: 1000px */
+        }
+
+        .a_transition:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            box-shadow: 10px 10px 12px black;
+            font-size: 18px;
+            font-family: sans-serif;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Эффект движущихся элементов на сайте, можно создать с помощью свойств CSS3:
+            ■ переходов — transition;
+            ■ анимации — animation;
+            ■ трансформации — transformation
+     -->
+    
+     <!-- Свойство  transition - Изменяет одно CSS-свойство, на другое. За определенный промежуток времени-->
+
+     <div class="transition_css">
+        <a class="a_transition" href="#">Ссылка</a>
+     </div>
+</body>
+</html>

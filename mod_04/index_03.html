@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            @keyframes name{
+                from{
+                    условие анимации
+                }
+                to{
+                    условие анимации
+                }
+            }
+            - Кадры создаются с помощью спец. правила @keyframes. . Сами кадры объявляются ключевыми словами from — «от» или начальный, первый кадр. И to — «до» или конечный кадр, второй и последний кадр.
+            name — имя анимации
+        */
+
+
+        h1{
+            width: 15vw;
+            color: #fff;
+            text-align: center;
+            background-color: #d4c4ff;
+            animation: myAnim 5s linear alternate infinite;
+            /* Для элемента надо вызвать созданную ниже анимацию. 
+            - С помощью свойства animation где, myAnim — это вызов, созданной с помощью правила @keyframes, анимации, 
+            - 5s — это скорость анимации от начального кадра до конечного кадра, 
+            - linear — это временная функция (линейная), 
+            - alternate определяет воспроизведение анимации «вперёд-назад», 
+            - infinite — это количество раз проигрывания анимации, ключевое слово infinite — бесконечное количество раз
+            */
+        }
+
+        @keyframes myAnim{
+            from{
+                margin-left: 0px;
+            }
+            to{
+                margin-left: 500px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- CSS-анимация. Свойство Animation -->
+    
+
+    <h1>Новости</h1>
+    
+</body>
+</html>

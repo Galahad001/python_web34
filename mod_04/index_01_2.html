@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Добавляем стили для блока, содержащего в себе ссылку */
+        .block{
+            display: inline-block;
+            height: 80px;
+            width: 20vw;
+            position: relative;
+        }
+        /* Добавляем стили для ссылки в блоках */
+        .block a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            padding: 2em 0;
+            position: absolute;
+            z-index: 2;
+        }
+        /* Цвет фона для каждого блока */
+        .bl-1{
+            background: #686E8F;
+        }
+        .bl-2{
+            background: #FCCC41;
+        }
+        /*
+        С помощью псевдоэлемента ::before добавим «подни-
+        мающуюся шторку» для каждого блока со своим цветом
+        */
+        .bl-1::before {
+            content: '';
+            background-color: rgba(252, 204, 65, 0.7);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            transition: 1s;
+        }
+        .bl-2::before {
+            content: '';
+            background-color: rgba(104, 110, 143, 0.7);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            transition: 1s;
+        }
+        /* При наведении «шторка» будет высотой 100% */
+        .bl-1:hover::before, .bl-2:hover::before{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="block bl-1">
+        <a href="#">Раздел сайта №1</a>
+    </div>
+
+    <div class="block bl-2">
+        <a href="#">Раздел сайта №2</a>
+    </div>
+    
+</body>
+</html>

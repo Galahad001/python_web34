@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Стили для родительского блока */
+        .card{
+            width: 300px;
+            height: 450px;
+            margin: 0 auto;
+            position: relative;
+            /* относительное позиционирование родительского элемента, чтобы дочерние .product, .description располагать внутри card */
+            border: 1px solid  #f5dde1;
+        }
+
+        
+        /* Стили дочерних элементов */
+         .product, .description{
+            width: 100%;     /* ширина 100% родителя */
+            height: 100%;
+            position: absolute;  /* абсолютное позиционированиеэлементов внутри родителя с классом card */
+                left: 0;
+                top: 0;
+            text-align: center;
+            background-color: #fff;
+            backface-visibility: hidden;
+            /* backface-visibility - определяет, видна ли задняя грань элемента при повороте к пользователю. 
+            hidden - скрывает заднюю часть карточки*/
+            transition: 1s;
+            /* Время выполнения */
+        }
+
+         /* Стили для кнопки описательного блока карточки товара  */
+        .description a{
+            display: inline-block;
+            padding: 10px 30px;
+            margin-top:30px;
+            text-decoration:none;
+            text-transform: uppercase;
+            /* Буквы в верхнем регистре */
+            color:#fff;
+            background-color: #f5dde1;
+        }
+
+        .description {
+            box-sizing:border-box;
+            /* Не позволяет элементу расширятся */
+            padding:40px;
+            transform: rotateY(180deg);
+             /* поворот блока с описание на 180 град, прячем его в начальном состоянии, без наведения курсора мыши */
+        }
+
+        .card:hover .product {
+            transform: rotateY(180deg); /* разворачиваем блок с изображением на 180 градусов */
+        }
+        .card:hover .description {
+            transform: rotateY(360deg); /* возвращаем блок с описанием*/
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="product">
+            <img src="img/ima"  alt="Духи">
+        </div>
+        <div class="description">
+            <h2>Product Name</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque distinctio eius deleniti, quia accusantium quas nobis beatae, recusandae quibusdam explicabo asperiores vel porro fugit? Rerum magni fuga ipsum ducimus adipisci.
+            </p>
+            <a href="#">buy</a>
+        </div>
+    </div>
+    
+</body>
+</html>

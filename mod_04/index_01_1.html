@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        div{
+            width: 60%;
+            margin: auto;
+            height: auto;
+        }
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 10px;
+            width: 200px;
+            height: 30px;
+            background-color: aqua;
+            border: 7px groove blue;
+            border-radius: 30px;
+
+            transition-property: background-color, color;
+            transition-duration: 0.9s, 2.9s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+
+            /* В transition-property - можно указываеть css-свойства которые мы хптим изменить
+                В transition-duration - указываем время перехода для каждого свойства  */
+        }
+
+        a:hover{
+            background-color: brown;
+            color:wheat
+        }
+    </style>
+</head>
+<body>
+
+    <!-- transition - можно задавать частями  -->
+
+    <div>
+        <a href="#">Ссылка</a>
+    </div>
+    
+</body>
+</html>
