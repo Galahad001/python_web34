@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        caption{
+            caption-side:top; /*Изменяем позицию заголовка Верх или Низ*/
+        }
+
+        .col-1{
+            background-color: #ffcccc;
+        }
+        .col-2{
+            background-color: #ff9999;
+        }
+        .col-3{
+            background-color: #cc9999;
+        }
+
+        thead{
+            color: #ffff00;
+        }
+        tfoot{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Тег заголовка: <caption>. Теги логического
+         группирования столбцов: <colgroup>, <col>.
+         Теги логического структурирования таблиц:
+         <thead>, <tbody>, <tfoot> -->
+    
+    <!-- Для того, чтобы задать заголовок таблице используется тег <caption>. -->
+
+    <!-- Тег <colgroup> представляет из себя контейнер, в ко-
+        тором содержатся теги <col>. Для указания количества
+        объединяемых столбцов применяется атрибут span, зна-
+        чением которого является целое число. -->
+
+    <!-- Для логического структурирования данных таблицы
+        используются теги <thead>, <tbody>, <tfoot>. Рассмотрим
+        каждый из них более подробно. -->
+    <!-- Тег <thead> используется как контейнер для строк та-
+        блицы и применяется для группировки строк с ячейками
+        для заголовков столбцов, тем самым формируя «шапку»
+        таблицы. -->
+
+    <!-- Тег <tfoot> предназначен для формирования «под-
+        вала» таблицы, также используется как контейнер для строк -->
+
+    <!-- Тег <tbody> используется как контейнер для строк
+        таблицы, которые содержит ячейки с основным контен-
+        том таблицы, формируя «тело» таблицы. В таблице мож-
+        но использовать только один элемент <tbody>, который
+        прописывается после тегов <thead> и <tfoot>. -->
+
+    <table>
+        <caption>Заголовок таблицы</caption>
+        <colgroup>
+            <col span="2" class="col-1">
+            <col span="4" class="col-2">
+            <col class="col-3">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+                <th>call</th>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+            </tr>
+            <tr>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+            </tr>
+            <tr>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+                <td>call</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

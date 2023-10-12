@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            /*установливаем ширину таблицы в % от ширины body*/
+            width: 80%;
+            /*чтобы таблица сильно не сжималась и не растягивалась при изменении ширины окна браузера, прописываем минимальную и максимальную ширину в пикселях*/
+            min-width: 650px;
+            max-width: 800px;
+            /*распологаем таблицу по середине по горизонтали*/
+            margin: 0 auto;
+            /*убираем отступы между ячейками*/
+            border-collapse: collapse;
+            /*устанавливаем системный шрифт для текста*/
+            font-family: Arial, Helvetica, sans-serif;
+        }
+caption{
+    /*выравниваем заголовок по горизонтали по правому краю*/
+    text-align: right;
+    /*переводим текст в верхний регистр*/
+    text-transform: uppercase;
+    /*устанавливаем цвет заголовка таблицы*/
+    color: #666666;
+    /*задаем жирность шрифту*/
+    font-weight: 700;
+}
+/*текст ячеек заголовков столбцов в шапке и подвале переводим в верхний регист и задаем белый цвет*/
+th{
+    text-transform: uppercase;
+    color: #ffffff;
+}
+/*задаем оттенок серого цвета первой ячейке заголовков столюцов в шапке и подвале*/
+tr th:first-child{
+    color: #666666;
+}
+/*всем ячекам таблицы устанавливаем выравнивание по цетнру по горизонтали и внутренний отступ сверху и снизу*/
+td, th{
+    text-align: center;
+    padding: 1em 0;
+}
+/*первой ячейке каждой строки задаем выравнивание по левой стороне, серый цвет и внутренний отступ слева */
+tr td:first-child{
+    text-align: left;
+    color: #666666;
+    padding-left: 0.7em;
+}
+/*содержимое основных ячеек - элементы span - оформляем следующим образом:*/
+span{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2em;
+    display: inline-block;
+    border: 2px solid  #ffffff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+/*каждой колонке, на которые разбили таблицу, задаем фоновый цвет и ширину, причем четыре колонки будут иметь одинаковую ширину, а ширина первой колонки будет высчитываться автоматически*/
+.col-1{
+    background-color: #dddddd;
+    width: auto;
+}
+.col-2{
+    background-color: #17d0d3;
+    width: 17%;
+}
+.col-3{
+    background-color: #8ac149;
+    width: 17%;
+}
+.col-4{
+    background-color: #feca28;
+    width: 17%;
+}
+.col-5{
+    background-color: #f44236;
+    width: 17%;
+}
+thead{
+    /*задаем нижнюю границу для шапки таблицы*/
+    border-bottom: 1px solid #ebebeb;
+}
+tfoot{
+    /*задаем верхнюю границу для подвала таблицы*/
+    border-top: 1px solid #ebebeb;
+}
+    </style>
+</head>
+<body>
+    
+    <table>
+        <caption>Title table</caption>
+        <colgroup>
+            <col class="col-1">
+            <col class="col-2">
+            <col class="col-3">
+            <col class="col-4">
+            <col class="col-5">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>specification</th>
+                <th>free</th>
+                <th>basic</th>
+                <th>standart</th>
+                <th>premium</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Price</th>
+                <th>$ 0.00</th>
+                <th>$ 9.99</th>
+                <th>$ 19.99</th>
+                <th>$ 29.99</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>Lorem ipsum dolor</td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+            </tr>
+            <tr>
+                <td>Ratione deserunt modi</td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+            </tr>
+            <tr>
+                <td>Vel maiores odio</td>
+                <td><span>-</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+            </tr>
+            <tr>
+                <td>Minus vel aperiam natus</td>
+                <td><span>-</span></td>
+                <td><span>-</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+            </tr>
+            <tr>
+                <td>Provid minima sapiente</td>
+                <td><span>-</span></td>
+                <td><span>-</span></td>
+                <td><span>-</span></td>
+                <td><span>+</span></td>
+            </tr>
+            <tr>
+                <td>Eveniet eaque excepturi</td>
+                <td><span>-</span></td>
+                <td><span>-</span></td>
+                <td><span>-</span></td>
+                <td><span>+</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
