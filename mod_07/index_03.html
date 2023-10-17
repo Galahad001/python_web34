@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      label {
+        display: inline-block;
+        width: 70px;
+        text-align: right;
+      }
+      form li {
+        margin-top: 0.5em;
+      }
+      /*
+      Задаем настройки для ширины формы, границ, отступов
+      */
+      form {
+        width: 300px;
+        padding: 1em;
+        border: 1px solid rgba(23, 4, 56, 0.829);
+        border-radius: 2em;
+      }
+      textarea {
+        vertical-align: top;
+      }
+      input, textarea {
+        /*
+        Устанавливаем один и тот же шрифт 
+        для input и textarea.
+        По умолчанию в textarea используется
+        monospace
+        */
+        font: 1em sans-serif;
+        width: 200px;
+        border: 1px solid #777;
+      }
+      input:focus, textarea:focus {
+        /* Делаем подсветку для элемента в фокусе */
+        border-color: #000;
+      }
+      /* центрируем нашу кнопку */
+      #submitBtn {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+    <title>Send message to us</title>
+  </head>
+
+  <body>
+    <h3>We need your opinion!</h3>
+    <hr />
+    <form>
+      <ul>
+        <li>
+          <label for="nick">Nick:</label>
+          <input type="text" id="nick" name="userNick" />
+        </li>
+        <li>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="userEmail" />
+        </li>
+        <li>
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" name="userPhone" />
+        </li>
+        <li>
+          <label for="message">Message:</label>
+          <textarea id="message" name="userMessage"></textarea>
+        </li>
+        <li>
+          <input id="submitBtn" type="submit" value="Send my message" />
+        </li>
+      </ul>
+    </form>
+    <hr />
+  </body>
+</html>
