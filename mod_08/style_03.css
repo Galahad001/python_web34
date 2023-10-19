@@ -1,0 +1,42 @@
+.wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.pos {
+    position: absolute;
+    border: 3px double #0c800c;
+    border-radius: 8px;
+    padding: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.45);
+    /* по ширине, по высоте, размытие, длина размытия */
+    cursor: pointer;
+}
+
+/* или active  */
+.pos:hover{
+    z-index: 1;
+}
+
+.pos1 {
+    left: 20%;
+    top: 60px;
+}
+
+.pos2 {
+    left: 28%;
+    top: 130px;
+}
+
+.pos3 {
+    left: 50%;
+    top: 20px;
+}
+
+.pos4 {
+    left: 43%;
+    top: 210px;
+}

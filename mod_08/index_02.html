@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stule_02.css">
+</head>
+<body>
+
+    <!-- 
+        мент с position: absolute называется абсолютно по-
+        зиционированным. Абсолютность его расположения объ-
+        ясняется тем, что при отсутствии у его родительского эле-
+        мента свойства position, отличного от static, он размещается
+        относительно окна браузера, т.е. абсолютно оторвавшись
+        от своего прежнего местоположения в html-разметке.
+     -->
+     
+
+
+     <!-- 
+        Фиксированное позиционирование в соответствии со
+        своим названием фиксирует элемент на странице в опре-
+        деленном месте вне зависимости от прокрутки остально-
+        го контента.
+      -->
+
+      <!-- 
+        Суть работы position: sticky заключается в том, что эле-
+        мент с таким свойством визуально ничем не отличается от
+        соседей, как и относительно позиционированный, до тех
+        пор, пока вы не начнете прокручивать страницу или эле-
+        мент, в котором он находится. В этом случае липкий эле-
+        мент закрепляется в той координате, которая указана в его
+        свойствах, и не смещается с остальным контентом.
+       -->
+       <h2 class="sticky1">Липко</h2>
+       <h2 class="sticky2">Липко</h2>
+    <div id="container">
+        <h1  id="fixed">Фиксация</h1>
+        <div id="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ratione earum. In hic vitae minima commodi, est quam dignissimos illo odio voluptas obcaecati dolorum quae sit numquam optio facere inventore.</div>
+        <div id="absolut">Absolut Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ratione earum. In hic vitae minima commodi, est quam dignissimos illo odio voluptas obcaecati dolorum quae sit numquam optio facere inventore.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ratione earum. In hic vitae minima commodi, est quam dignissimos illo odio voluptas obcaecati dolorum quae sit numquam optio facere inventore.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ratione earum. In hic vitae minima commodi, est quam dignissimos illo odio voluptas obcaecati dolorum quae sit numquam optio facere inventore.</div>
+    </div>
+</body>
+</html>

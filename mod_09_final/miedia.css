@@ -1,0 +1,32 @@
+@media (min-width: 300px) and (max-width: 600px){
+    #container{
+        width: 80%;
+        margin: auto;
+        border: 2px dotted gray;
+        padding: 10px;
+        
+    }
+    #container p{
+        font-size: 20px;
+        font-weight: 500;
+        text-shadow:2px 2px 2px #b38f96;
+        color: rgb(114, 96, 96);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px){
+    #container{
+        width: 80%;
+        margin: auto;
+        border: 5px double rgb(71, 12, 150);
+        padding: 10px;
+    }
+
+    #container p{
+        font-size: 20px;
+        font-weight: 500;
+        text-shadow:5px 5px 2px #b38f96;
+        color: rgb(255, 255, 255);
+        background-color: black;
+    }
+}
