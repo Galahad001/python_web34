@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Чаще всего операторы и функции автоматически приводят переданные им значения к нужному типу.
+        // Например, alert автоматически преобразует любое значение к строке. Математические операторы преобразуют значения к числам. Есть также случаи, когда нам нужно явно преобразовать значение в ожидаемый тип.
+
+        // Строковое преобразование
+        let b = true
+        alert(b)
+
+        let str_01 = String(b)
+        alert(typeof(str_01))
+
+        // Численное преобразование
+        // Численное преобразование происходит в математических функциях и выражениях.
+        alert( "6" / "2" ); // 3, строки преобразуются в числа
+
+
+        let str = "123";
+        alert(typeof str); // string
+
+        let num = Number(str); // становится числом 123
+
+        alert(typeof num); // number
+
+
+
+        // Логическое преобразование
+
+        // Правило преобразования:
+
+        // Значения, которые интуитивно «пустые», вроде 0, пустой строки, null, undefined и NaN, становятся false.
+        // Все остальные значения становятся true.
+        alert( Boolean(1) ); // true
+        alert( Boolean(0) ); // false
+
+        alert( Boolean("Привет!") ); // true
+        alert( Boolean("") ); // false
+
+
+    </script>
+    
+</body>
+</html>
