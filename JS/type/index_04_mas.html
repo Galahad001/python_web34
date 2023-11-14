@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Массив предназначен для упорядоченной колекции данных
+
+        // Как обьявить
+        // let arr = new Array(1,2,3)
+        // alert(arr)
+
+        // let arr2 = [1,2,3,4,5]
+        // alert(arr2)
+
+        // Элемнеты массива начинаются с нуля.
+        // Получить элемент можно указав его номер в [] скобках
+        // let fruits = ['Яблоко', 'Апельсие', 'Слива']
+
+        // alert(fruits[0])
+
+        // Элеиент можно заменить
+        // fruits[0] = 'Персик'
+        // alert(fruits)
+        // Добавить новй
+        // fruits[3] = 'Малина'
+        // fruits[10] = 'Черешня'
+        // alert(fruits)
+
+        // Получить общее число элементов массива
+        // alert(fruits.length)
+
+
+        // Получить последний элемнт массива
+        // alert(fruits[fruits.length-1])
+        // alert(fruits.at(-1))
+
+
+        // Методы pop/push, shift/unshift
+        // push - добавляет элемент в конец массива
+        // shift - удаляет элемент в начале, сдвигая очередь, так что второй элемент становится первым.
+        // pop удаляет последний элемент.
+
+        // fruits = ['Яблоко', 'Апельсие', 'Слива']
+        // Удаляет последний элемент массива и возвращает его
+        // alert(fruits.pop())
+        // alert(fruits)
+
+        // Добавляет элемент в конец массива
+        // fruits.push('Киви')
+        // alert(fruits)
+
+
+        // Удаляет первый элемент из массива и возвращает его.
+        // alert(fruits.shift())
+        // alert(fruits)
+
+        // Добавляет элемент в начало массива
+        // fruits.unshift('Банан')
+        // alert(fruits)
+
+        // Методы push и unshift могут добавлять сразу несколько элементов:
+        // let fruits = ["Яблоко"];
+        // fruits.push("Апельсин", "Груша");
+        // fruits.unshift("Ананас", "Лимон");
+
+        // alert(typeof [])
+
+
+        let fruits = ['Яблоко', 'Апельсие', 'Слива']
+
+        // Для перебора массива есть два способа
+
+        // for (let i=0; i < fruits.length; i++){
+        //     alert(fruits[i])
+        // }
+
+        // for (let fruit of fruits){
+        //     alert(fruit)
+        // }
+
+
+        // Свойство length автоматически обновляется при изменении массива. Если быть точными, это не количество элементов массива, а наибольший цифровой индекс плюс один.
+
+
+        // Многомерные массивы
+        // let matrix = [
+        //     ['Яблоко', 'Малина', 'Киви'],
+        //     [true, false, true],
+        //     [7, 8, 9]
+        //     ];
+
+        // for (let i = 0; i < matrix.length; i++){
+        //     for (let j = 0; j < matrix[i].length; j++){
+        //         alert(matrix[i][j])
+                
+        //     }
+        //     alert('Новый элемент')
+        // }
+    
+            function sumInput(){
+                let mas = []
+
+                while (true){
+                let i = prompt('Введите число')
+                
+
+                if (i === "" || i === null) break;
+
+                mas.push(+i)
+                }
+                
+                let sum = 0
+                for (let n of mas){
+                    sum += n
+                }
+                return sum
+            }
+        
+            let a = sumInput()
+            alert(a)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // СТРОКИ
+        // Есть 3 вида кавычек:
+        let n1 = 'Test str'
+        let n2 = "Test str"
+        let n3 = `Test str`
+
+        //Первые две работают одинаково. Обратные же кавычки позволяют вставить в строку выражения при помощи ${}
+        // function name(n){
+        //     return `${n}, приятно познакомится`
+        // }
+
+        // alert(`Привет меня зовут ${name('Питер')}`)
+
+        // С помощью обратной строки можно создавать многострочную строку. 
+        // alert(`
+        // -Денис
+        // -Олкг
+        // -Анна
+        // -Игорь
+        // -Мия
+        // `)
+
+
+        // Спецсимволы
+        // Многострочность можно создавать и по другому
+        // Символ перевода строки \n
+        // Спецсимволы начинаются с обраного слэша \ - так называемый символ экранирования
+        // Обратный слэш не записывается в строку после ее прочтения
+        // let msg = 'Текст \n перенесется \n на \n другую \nстроку'
+        // alert(msg)
+
+        // alert('Экранирование \\ \' \n \t\tТабуляция')
+
+
+        // Проверка длины строки при помощи length
+        // alert('Test'.length)
+
+
+        // Доступ к символам
+        // Можно полусить из строки отдельный символ
+        // let str = 'Hello'
+
+        // alert(str[0])
+        // alert(str.at(0))
+        // получаем последний символ
+        // alert( str[str.length - 1] )
+        // С помощью метода at можно получить отрицательную позицию
+        // alert( str.at(-1) )
+
+        // for(let i in str){
+        //     alert(i)
+        // }
+
+
+        // Строки не изменяемы
+        // Содержимое строк нельзя изменить. Нельзя поменять символ посреди строки
+
+        // let s = 'Test'
+
+        // s[2] = 'O'
+        // alert(s[2])
+
+
+        // // Можно поступить так. Содадим новую строку и запишем ее в ту же самую переменную
+        // s = s + ' ok'
+        // alert(s)
+
+        // Изменение строк
+        // let s = "HelLo"
+        // // alert(s.toLowerCase())
+        // alert(s.toUpperCase())
+        // alert(s)
+        // // Применить к конкретному сиволу
+        // alert(s[1].toUpperCase())
+
+        
+        // Поиск подстроки
+        // 1 str.indexOf
+
+        // let str = 'Текст для проверки на вхождение подстроки'
+        // indexOf ищет подстроку которую укажем первым параметром, вернет позицию на которой распологается совпадение, либо -1 если совпадений нет.
+        // Второй необязательный параметр задает начало поиска
+        // alert(str.indexOf('для'))
+        // alert(str.indexOf('Д'))
+
+        // Для того чтобы найти все вхождения подстроки используестя цикл
+
+        // let s = 'Ослик Иа-Иа посмотрел на виадук'
+
+        // alert(s)
+        // let target = 'Иа'
+        // let pos = 0
+        // while (true){
+        //     let f = s.indexOf(target, pos)
+
+        //     if (f == -1){
+        //         break
+        //     }
+        //     alert(`Найдено тут: ${f}`)
+        //     pos = f + 1
+        // }
+
+
+        // let s = 'Test'
+        // if (s.indexOf('T') != -1){
+        //     alert("OK")
+        // }
+
+
+        // Метод  includes ищет в строке построку, и если находит вернет true. Если не находит false
+            // let f = 'Проверка работы'
+            // alert(f.includes('ка'))
+            // // Методы str.startsWith и str.endsWith проверяют, соответственно, начинается ли и заканчивается ли строка определённой строкой
+            // alert(f.startsWith('Пр'))
+            // alert(f.endsWith('ты'))
+
+
+
+        // Как получит подстроку.
+        // str.slice(start [, end]) - возвращает часть строки от start да end ( но не включая его)
+        // let str = 'Просто текст'
+
+        // alert(str.slice(1,4))
+        // alert(str.slice(2))
+        // alert(str.slice(-5, -1))
+
+        // str.substring(start [, end]) - работает почти также как slice. Но если start больще  end, метод сработаетт так как ессли бы аргументы были поменяны местами.
+        // Неподдерживает отрицательнык значения
+        // alert( str.substring(2, 6) )
+        // alert( str.substring(6, 2) )
+
+        // str.substr(start [, length])
+        // Возвращает часть строки от start длины length.
+        // Верент 4 символа начиная с позиции 2
+        // alert(str.substr(2,4))
+
+        // Сравнение строк
+        // alert ('a' > 'Z')
+
+        // У строк имеется код. Чтобы его посмотреть используется. 
+        // alert('z'.codePointAt())
+        // alert('Z'.codePointAt())
+
+        // // Создать символ по его коду
+        // alert(String.fromCodePoint(90))
+
+        // let str = '';
+
+        // for (let i = 65; i <= 220; i++) {
+        // str += String.fromCodePoint(i);
+        // }
+        // alert( str );
+//         function ucFirst(str) {
+//   if (str[0]== undefined) return str;
+
+//   return str[0].toUpperCase() + str.slice(1);
+// }
+
+// alert( ucFirst("вася") ); // Вася
+
+// function test(text){
+//     let lowerStr = text.toLowerCase();
+
+//     return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+// }
+// let res = test('buy ViAgRA now')
+// alert(res)
+
+alert('…'.codePointAt())
+    </script>
+    
+</body>
+</html>
