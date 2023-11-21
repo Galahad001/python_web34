@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         let arr = [
+            {name: 'Банан', num: 10, pu:true},
+            {name: 'Киви', num: 8, pu:false},
+            {name: 'Манго', num: 10, pu:true},
+        ]
+
+        // Функция вывода
+        function showList (){
+            let no = arr.filter(item => item.pu === false)
+            let yes = arr.filter(item => item.pu === true)
+
+            let con = no.concat(yes)
+            console.log(con)
+        }
+
+        // Функция добавления
+        function pushProduct(nameProduct, number){
+            let f = false
+            
+            for (let i = 0; i < arr.length; i++){
+                if (arr[i].name === nameProduct){
+                    arr[i].num += number
+                    f = true
+                    break
+                }
+            }
+            
+            if(!f){
+                
+                arr.push({name: nameProduct, num:number, pu:false})
+            }
+            console.log(arr)
+        }
+
+        // Функция покупи
+        function bought(nameProduct){
+            for(let i = 0; i < arr.length; i++){
+                if (arr[i].name === nameProduct){
+                    arr[i].pu = true
+                    break
+                }
+            }
+            console.log(arr)
+        }
+
+        // showList()
+        // pushProduct('Банан', 5)
+        // pushProduct('Апельсин', 5)
+        // bought('Апельсин')
+  </script>
+
+
+</body>
+</html>

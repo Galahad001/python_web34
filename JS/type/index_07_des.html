@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Деструктуризация позволяет нам распоковать обьекты и массивы в переменные. Для более удобной работы
+        // Дест-я массива
+        let arr = ['Давид', 'Давидов']
+        let [name, fam] = arr
+        console.log(name)
+        console.log(fam)
+        console.log(arr)
+
+        // можно работать с любым перебираем обьектом 
+        let [a,b,c] = 'abc'
+        let [one, two, three] = new Set([1, 2, 3]);
+        console.log(a)
+
+        // Присвайапть можно чему угодно
+        let user = {};
+        [user.name, user.surname] = "Давид Давидов".split(' ');
+
+        console.log(user.name); // Ilya
+        console.log(user.surname)
+
+
+        // Что если длина массива больше чем список переменных слева. Остасочные элементы массива игнорируются. Если хотим поличить остаточные значения можно использовать троеточиу
+        let mas = ['Давид', 'Олег', 'Мия', 'Анна', 'Никита'] 
+        let [name1, name2, ...names] = mas
+        console.log(name1)
+        console.log(name2)
+        console.log(names)
+        console.log(mas)
+
+
+
+
+        // Деструктуризация обьектов
+        let options = {
+            title: "Menu",
+            width: 100,
+            height: 200
+            };
+
+            let {title, width:w, height} = options;
+
+            alert(title);  // Menu
+            alert(w);  // 100
+            alert(height);
+
+    </script>
+</body>
+</html>

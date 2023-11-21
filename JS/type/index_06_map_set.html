@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Map - это коллекциия ключь-значение, также как и обьект. Но оно позваляет задавать ключи разных типов данных
+
+        // Создать коллекцию
+        let user = new Map()
+
+        // Записать своиство
+        user.set('1', 'Олег')
+        user.set(1, 'Мия')
+        user.set(false, 'Дима')
+        user.set(2, 'Кира')
+        user.set('text_name', 'Антон')
+        user.set(true, 'работает')
+
+        // Получить значение по ключу
+        console.log(user.get(1))
+        console.log(user.get('1'))
+        console.log(user.get(true))
+        console.log(user)
+
+        // Вернуть булевское значение еслт найдет/не найдет ключ в коллекции
+        console.log(user.has(1))
+
+
+        // Удалить своиство по ключу
+        user.delete(true)
+        console.log(user)
+
+
+        // Проверить колличество элементов
+        console.log(user.size)
+
+
+        // Полностью очистить 
+        // user.clear()
+        // console.log(user)
+
+
+        // Использовать обьекты в качестве ключей
+        // let test = {name: 'Хэнк'}
+        // user.set(test, 1234556789)
+        // console.log(user.get(test))
+        // console.log(user)
+
+
+
+
+
+        // Перебор Map
+        // Есть 3 метода
+        // Вернуть обьект по ключам
+        for (let i of user.keys()){
+            console.log(i)
+        }
+        console.log('=============================')
+        // Вернуть по значеию
+        for(let i2 of user.values()){
+            console.log(i2)
+        }
+        console.log
+        ('=============================')
+        // Вернуть по ключ/значение
+        for(let i3 of user.entries()){
+            console.log(i3)
+        }
+
+
+
+        // Set - вид коллекции, где каждое значение появляется только один раз. Еще называют (множеством)
+        // Создание 
+        // let test = new Set([1,1,2,3,3,1])
+        // console.log(test)
+
+        // Создание
+        let s = new Set()
+        // Добавление значений. Если значения уже есть в множестве, то ничего не происходит
+        s.add('Niko')
+        s.add('Niko')
+        s.add('Riko')
+        s.add('Piko')
+        s.add('Hiko')
+        console.log(s)
+        // Удалить значение. Удаляет и возвращает true. false - если ничего не нашел
+        console.log(s.delete('Hiko'))
+        console.log(s.delete('Hiko'))
+        console.log(s)
+        // Ищет значение, если найдет вернут true. Иначе false
+        console.log(s.has('Piko'))
+        // Удалить все
+        // s.clear()
+        // Получить кол. элементов.
+        console.log(s.size)
+        
+        // Пример
+        let users = new Set()
+        let user1 = {name:'Мари'}
+        let user2 = {name:'Анна'}
+        let user3 = {name:'Олег'}
+
+        users.add(user1);
+        users.add(user2);
+        users.add(user2);
+        users.add(user1);
+        users.add(user3);
+
+        console.log(users)
+        console.log(users.size)
+
+
+
+        // Перебор set - перебирать можно с помощью for of так и forEach
+        let set = new Set(["апельсин", "яблоко", "банан"])
+        for (let i of set)console.log(i)
+
+        // set.forEach()
+
+    </script>
+</body>
+</html>

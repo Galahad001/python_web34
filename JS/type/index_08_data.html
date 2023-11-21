@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Встроеный обьект date - можем работать с датой и временем
+
+        // Создание
+        let now = new Date()
+        console.log(now)
+
+        // Получить милисек. прошедшие с 1970 года
+        let  i = Date.now()
+        console.log(i)
+        
+        let Jan01_1970 = new Date(0);
+        console.log( Jan01_1970 );
+
+        let d = new Date(1700516355933)
+        console.log(d)
+
+        
+        let date = new Date('2000-12-2')
+        console.log(date)
+
+        // По порядку Год, месяц, число, час, минуты, сукунды
+        let year = new Date(2001, 4, 21, 2, 3, 43)
+        console.log(year)
+
+
+        // Методы
+        console.log(now.getFullYear())
+        console.log(now.getMonth())
+        console.log(now.getDate())
+        console.log(now.getHours())
+        console.log(now.getMinutes())
+        console.log(now.getDay())
+        // Кол миллисекунд с 1970
+        console.log(now.getTime())
+
+
+
+        // Установка даты
+        console.log('------------------------------')
+        let b = new Date();
+        b.setFullYear(2001)
+        b.setMonth(11)
+        b.setDate(12)
+        b.setHours(12)
+        console.log(b)
+        // console.log(b.setMilliseconds(20011234))
+
+
+
+        let start = new Date(); // начинаем отсчёт времени
+        // выполняем некоторые действия
+        // for (let i = 0; i < 100000; i++) {
+        // let doSomething = 'asd';
+        // }
+        // let end = new Date(); // заканчиваем отсчёт времени
+        // alert( `Цикл отработал за ${end - start} миллисекунд` );
+
+        console.log(Date.now())
+
+
+        // Разбор строки с датой Date.parse(str)
+        // Формат строки должен быть следующим: YYYY-MM-DDTHH:mm:ss.sssZ
+        console.log('---------------------------------------')
+        let ms = Date.parse('2000-04-09T10:10:10')
+        console.log(ms)
+        console.log(new Date(ms))
+
+
+        // 
+        console.log('+++++++++++++++++++')
+        // При попытке преоб-ть Date в число вернется кол-во миллисекунд
+        let u = new Date()
+        console.log(u)
+        console.log(+u)
+
+
+        // DZ
+
+        function getWeekDay(date){
+            let mas = ['ВС', 'ПН', 'ВТ', "СР", "ЧТ","ПТ", "СБ"]
+            let day = mas[date.getDay()]
+            console.log(day)
+        }
+
+        let res = new Date(2022, 4, 4)
+        console.log(res)
+        getWeekDay(res)
+
+
+        function getSecondsToTomorrow() {
+  let now = new Date();
+
+  // завтрашняя дата
+  let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+
+  let diff = tomorrow - now; // разница в миллисекундах
+    let h = Math.floor((diff / (1000 * 60 * 60)) % 23); 
+    let m = Math.floor((diff / (1000 * 60)) % 60);
+    let s = Math.floor((diff / 1000) % 60);
+    console.log(`До завтра осталось ${h}:${m}:${s}`)
+        }
+let s = getSecondsToTomorrow()
+
+
+// alert(arr.at(-1))////максимальное число
+// alert(arr.at(0))//////минимальное число
+
+// alert(Math.min(...arr))
+// alert(Math.max(...arr))
+// alert()
+//функция
+
+// arr.sort( (a, b) => a - b );///// сортировка
+// alert(arr)
+// alert(arr.at(-1))////максимальное число
+// alert(arr.at(0))//////минимальное число
+
+// alert(s)
+
+// alert(3 in arr)
+
+
+// Напишите функцию, которая принимает два массива и возвращает новый массив, содержащий элементы, которые есть в обоих массивах.
+let arr= [
+    5,3,2,11,1,6,7,8,9,4,
+]
+let arr2= [11,12,13,1,15]
+
+const dz = arr.filter(x => arr2.includes(x));
+alert(dz)
+// let arr=['apple','banana','milk','movie','motor','tomato','bread',];
+// const letter = 'm';
+// const filteredWords = arr.filter(word => word.startsWith(letter));
+// alert(filteredWords);
+    </script>
+</body>
+</html>
