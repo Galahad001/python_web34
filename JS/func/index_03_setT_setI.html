@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Функции можно вызывать череза определенный интервал времени.
+        // Для этого существуют два метода:
+        // setTimeout позволяет вызвать функцию один раз через определённый интервал времени.
+        // setInterval позволяет вызывать функцию регулярно, повторяя вызов через определённый интервал времени.
+
+        // setTimeout
+        // function msg(name, text){
+        //     console.log(text + ' ' + name)
+        //     // alert('Прошло 5 сек')
+        // }
+        // setTimeout(msg, 1000, 'Филлипо', 'Как дела')
+
+        // Первый аргумент это функция/строка кода для выполнения. Второй это задержка. Последующие это аргументы передаваемые в функцию
+        // setTimeout(() => console.log('РАботает'), 4000)
+
+        // Для остановки таймера применяется функция clearTimeout(), в которую передается id таймера
+        // function printMessage() { console.log("Какойто текст")}
+        // const timerId = setTimeout(printMessage, 1000);
+        // clearTimeout(timerId);
+
+
+
+            // setInterval - такой же синтаксис. Разница в том что вызывается через промежуток времени (Заданный)
+            // let timerId = setInterval(() => alert('tick'), 2000);
+
+            // // остановить вывод через 5 секунд
+            // setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+
+            // Запускаем регулярно
+            // let timerId = setTimeout(function tick() {
+            // alert('tick');
+            // timerId = setTimeout(tick, 2000); // (*)
+            // }, 2000);
+            // setTimeout Вызвает сам себя после исполнения
+
+            // let test = setTimeout(() => alert("ничего не происходит"), 1000);
+
+            // clearTimeout(test);
+
+            function printNumbers(from, to) {
+  let timerId = setInterval(function() {
+    alert(from);
+    if (from == to) {
+      clearInterval(timerId);
+    }
+    from++;
+  }, 1000);
+}
+
+printNumbers(7, 10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Остаточные параметры - вызывать функцию можно с любым колличеством аргументов. Если аргументов больше чем параметров то используется остаточный параметр
+
+        function test (a, b, ...mas){
+            let res = a + b
+            console.log(res)
+            console.log('--------------------')
+            for (let m of mas){
+                console.log(m)
+            }
+        }
+        // test(1,2,3,4,5,6,7,8,9)
+
+
+        // Все аргументы функции находятся в псевдомасив arguments  под своими порядковыми номерами.
+        function test02(){
+            console.log(arguments.length)
+            console.log(arguments[0])
+            console.log(arguments[1])
+        }
+
+        // test02('Давид', 'Давидов')
+
+
+        // Оператор расширений - например как применить вывод максимального числа из массива? Напрямую передать масив не получится
+        // console.log(Math.max[1,2,3,4,5]) Выдаст undefined
+
+
+        // Чтобы применить функцию поможит оператор расширений. Опреатор раскрывает массив в список аргкментов
+        let arr = [1,2,3,4,5]
+        // console.log(Math.max(...arr))
+
+
+        // var gVar = 5
+        // console.log(window.gVar)
+
+
+        // Функции это обьекты - значит их можно (добавлять/удалять своиства, передавать по ссылке)
+        // Получить имя фукции Своиство Name
+        function test04(a, b, c){
+            console.log('Test')
+        }
+        // console.log(test04.name)
+        // Получить количество параметров функции
+        console.log(test04.length)
+
+
+        // Оюласти видимости
+        // С помощью {}  - можно изолировать часть кода
+        // {
+        //     let msg = 'Hello'
+        //     alert(msg)
+        // }
+        // alert(msg)
+        // Для if, for, while и т.д переменные обьявленные в блоке кода {}, также не видны с наружи
+
+        // Вложенная функция
+        function sayHiBye(firstName, lastName) {
+
+// функция-помощник, которую мы используем ниже
+        function getFullName() {
+        return firstName + "-" + lastName;
+        }
+
+        alert( "Hello, " + getFullName() );
+        alert( "Bye, " + getFullName() );
+        // let res = getFullName()
+        // return res
+
+        }
+        let f = sayHiBye('Нико', 'Чико')
+        // alert(f)
+
+
+        // var
+    </script>
+</body>
+</html>
