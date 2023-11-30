@@ -69,15 +69,43 @@
         console.log(com instanceof Comment)
 
 
+        console.log('-----------------')
+        // Проверка принадлежности своиств экземпляру объекта
+        console.log(com.hasOwnProperty('text'))
+        console.log(com.hasOwnProperty('up'))
+
+
         // Цепочка прототипов в js 
         // Object это корневой класс обьект встроенный в по умолчанию
         // com наследует от Comment тот в свою очередь наследует от Object
         
 
         // Вызов метода up
-        com.up()
-        com.up()
-        console.log(com)
+        // com.up()
+        // com.up()
+        // console.log(com)
+
+
+
+        // Статистические методы
+        // Иакие методы не наследуются экземплярами класса. И доступны только как своиства класса
+        class User{
+            constructor(name){
+                this.name = name
+                this.age = 90
+                }
+
+                static test(name, l_name){
+                    return `${name} ${l_name}`
+            }
+        }
+
+        // Тут не создается новый экземпляр класса. Просто вызываем метод класса
+        let i = User.test('Иван', 'Иванов')
+        console.log(i)
+        // Экземпляр не наследует ститичиский метод
+        let test = new User('Ivan')
+        console.log(test)
     </script>
 </body>
 </html>

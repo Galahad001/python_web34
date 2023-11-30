@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Прототип
+        // let car = {
+        //     speed: 400,
+        //     color(){
+        //         console.log('АУУУУУУУУУУФ что за цвет')
+        //     },
+        //     eps(){
+        //         console.log('А диски вообще огонь')
+        //     }
+        // }
+        // let bmw = {
+        //     brand: 'BMW',
+        // }
+
+        // let model = {
+        //     model: 'X6',
+        //     __proto__:bmw,
+        // }
+
+        // // Установили car как прототип bmw
+        // bmw.__proto__ = car
+
+        // console.log(bmw.speed)
+        // console.log(bmw.brand)
+        // bmw.color()
+        // model.eps()
+
+
+
+        // Операция записи не использует прототип
+        // Прототипы используются только для чтения
+        // Операции записи/удаления работают нарямую с обьектом.
+        // let user = {
+        //     isTrue: true,
+        //     ac(){
+        //         console.log('Создать акаунт')
+        //     }
+        // }
+
+        // let guest = {
+        //     __proto__:user
+        // }
+
+        // guest.ac = function(){
+        //     console.log('Акаунт уже есть')
+        // }
+
+        // guest.ac()
+
+        // Своиства-аксессоры - исключения, запись в него обрабатывается функцией-сеттером.
+        // let user = {
+        //     name:'Питер',
+        //     surname:'Фонкс',
+
+        //     set fullName(value){
+        //         [this.name, this.surname] = value.split(' ')
+        //     },
+        //     get fullName2() {
+        //         return `${this.name} ${this.surname}`;
+        //     }
+        // }
+        //     let admin = {
+        //         __proto__: user,
+        //         isAdmin: true
+        //         };
+
+        //     console.log(admin.fullName)
+
+        //     admin.fullName = 'Иван Иванов'
+        //     console.log(admin.fullName2)
+
+
+
+        
+
+        // Цикл for in проходит не только собственные свойства но и унаследаванные.
+
+        let user = {
+            name:'Питер',
+        }
+        let admin = {
+            password: 12345,
+            __proto__ : user
+        }
+
+        // Вернем только ключи обьекта admin
+        console.log(Object.keys(admin))
+
+        // Вернем по всем ключам. В том числе и унаследавнных
+        for (let key in admin){
+            console.log(key)
+        }
+
+        // Отфильтровать свойства от собственных и унаследованных
+        for(let i in admin){
+            let test = admin.hasOwnProperty(i)
+
+            if (test) {
+            console.log(`Свое: ${i}`); // Our: jumps
+        } else {
+            console.log(`Наследие: ${i}`); // Inherited: eats
+        }
+        }
+
+     </script>
+
+</body>
+</html>

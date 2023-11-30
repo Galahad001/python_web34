@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ФЛАГИ И ДЕСКРИПТОРЫ СВОИСТВ
+        // Своиства ообьектов могут быть гораздо мощьнее и гибче.
+
+        // Помимо значенния value, своиства могут иметь три спец. атрибута.
+        // writable – если true, свойство можно изменить, иначе оно только для чтения.
+        // enumerable – если true, свойство перечисляется в циклах, в противном случае циклы его игнорируют.
+        // configurable – если true, свойство можно удалить, а эти атрибуты можно изменять, иначе этого делать нельзя.
+
+
+        let user = {
+        name: "John"
+        };
+
+        // Метод позволяет полусть полную информацию о своистве. Первый параметр это обьект из которого мы получаем инфу. Второй имя своиства
+        let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+        console.log( JSON.stringify(descriptor, null, 2 ) );
+
+
+
+        // Для измененния флагов применяется метод  Object.defineProperty.
+        let user2 = {}
+
+        // Если своиство существует defineProperty обновит его флаги. Иначе метод создаст новое своиство с указанным значением и флагами. Если флаг не указан явно то он будет равен false
+        Object.defineProperty(user2, 'name', {
+            value: 'Джон',
+            // writable:true
+            enumerable:true
+        })
+        Object.defineProperty(user2, 'l_name', {
+            value: 'Константин',
+            // writable:true
+            enumerable:false
+        })
+
+        let descriptor2 = Object.getOwnPropertyDescriptor(user2, 'name')
+        console.log(JSON.stringify(descriptor2,null,2))
+
+        // Если попытаемся изменить своиство в обьекто то ничего не произойдет.
+        user2.name = 'test'
+        console.log(user2.name)
+        // Чтобы изменить своиство надо задать флагу writable - true
+
+        // enumerable:false - если равен фолс то мы не сможем перечислять своиства в обьекте.
+        for (let key in user2){
+            console.log(user2[key])
+        }
+
+
+        // Неконфигурироемое свойство. Такое своиство не может быть удалено, его атрибуты не изменятся.
+
+        let obj = {}
+        Object.defineProperty(obj, 'num',{
+            value: 1234567890,
+            writable: false,
+            enumerable:false,
+            configurable:false
+        })
+        // Теперь мы не сможем изменить значение в своистве,не проитерировать его. Также мы не сможем изменить конфигурацию
+
+
+
+        // Метод который позволяет определить сразу несколько своиств.
+        let test = {}
+        Object.defineProperties(test, {
+            sv1: {value: 'Джон', writable:false},
+            sv2: {value:'Test'}
+        })
+        console.log(test)
+
+
+        // Полочить все дескрипторы своиств сразу
+        let clone = Object.defineProperties({}, Object.getOwnPropertyDescriptors(test));
+
+        for (let key in test) {
+  clone[key] = user[key]
+}
+    console.log(clone)
+  </script>
+</body>
+</html>

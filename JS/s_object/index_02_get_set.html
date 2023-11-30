@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Етсь два типа своиств:
+        // 1 - Своиства-данные. Мы пользовались ими до текущего момента
+        // 2 - Своиства - аксессоры. По сути это функции, которые исп. для присвоения и получения значений, во внешнем коде они выглядят  как обычные своиства обьекта
+
+        // Геттеры и Сеттеры
+        // Своиства-акскссоры проедставленны методами: геттер - для чтения и сеттер - для записи
+
+        let user = {
+            name: 'Иван',
+            l_name: 'Иванов',
+
+            // Выводит полное имя
+            get fullName(){
+                console.log(`${this.name} ${this.l_name}`)
+            },
+
+            // Запись
+            set fullName(value){
+                [this.name, this.l_name] = value.split(' ')
+            }
+        }
+
+        // Снаружи своиство-фксесор выглядит как обычное своиство. В этом и смысл своиств-фксессоров. Мы не вызываем user.fullName как функцию, а Читаем как обычное своиство. Геттер выполнит за нас все остальное
+        user.fullName
+
+        // Если попытаемся  назначить новое значение произойдет ошибка. Все потому что у нас нет set
+        // user.fullName = 'Тест'
+        // user.fullName
+
+
+        user.fullName = 'Давид Давидов'
+        user.fullName
+
+
+
+
+        // Дескрипторы своиств доступа.
+        // Своиства-аксессоры отличаются от своиств-данных
+        // Своиства аксессоры не могут иметь value и writable. Но взамен предлагают функции get и set
+        // Пример
+        let car = {
+            model: 'X6',
+            man: 'BMW'
+        }
+        Object.defineProperty(car, 'fullName',{
+            get(){
+                return `${this.man} ${this.model}`;
+            },
+            set(value){
+                [this.man, this.model] = value.split(' ')
+            }
+        })
+
+
+        car.fullName='Test Testov'
+        console.log(car.fullName)
+
+
+
+        // Умные гетерры сеттеры
+        let users = {
+            get name(){
+                return this._name
+            },
+
+            set name(value){
+                if (value.length < 4){
+                    console.log('Имя слишком короткое')
+                    return
+                }
+                this._name = value
+            }
+        }
+        users.name = 'rt'
+        console.log(users.name);
+        users.name
+    </script>
+</body>
+</html>

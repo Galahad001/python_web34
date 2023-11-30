@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Расширение других классов
+        // Создали класс NumArray. При помощи слова extends(раширяем другой класс). А=Расщиряем класс Array
+        // Задача - для любого масива который создается, добавлять метод sum(). Который автоматически суммирует все элементы любого массива
+        // Расширяем класс Array
+        class NumArray extends Array{
+            sum(){
+                return this.reduce((el, acc) => acc += el, 0)
+            }
+        }
+        const myArr = new NumArray(2, 31, 4)
+        console.log(myArr)
+    </script>
+</body>
+</html>
