@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #field {
+            width: 200px;
+            height: 150px;
+            border: 10px solid black;
+            background-color: #00FF00;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #ball {
+            position: absolute;
+            left: 0; /* по отношению к ближайшему расположенному предку (поле) */
+            top: 0;
+            transition: 1s all; /* CSS-анимация для значений left/top делает передвижение мяча плавным */
+        }
+    </style>
+</head>
+<body>
+    <!-- 1 -->
+    <button onclick="pz1()">Нажми1</button>
+    <button onclick="pz2()">Нажми2</button>
+    <div id="text">Каккойто текст</div>
+    
+
+
+    <!-- 2 -->
+    <input type="button" style="width: 200px;" value="Хочешь быстро выучить js? нажми сюда..." onclick="this.style.display='none'">
+
+
+
+
+    <!-- 4 -->
+    <div id="field">
+        <img src="https://ru.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      </div>
+
+
+
+      <script src="script.js"></script>
+</body>
+</html>

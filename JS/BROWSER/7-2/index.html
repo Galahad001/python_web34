@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 1 -->
+    <input type="button" onclick="console.log('Клик')" value="test">
+
+    <input type="button" value="Таймер" onclick="test()">
+    
+    <input type="button" value="Событие DOM" id="el">
+    
+
+
+    <!-- Внутри обработчика события this ссылается на текущий элемент, то есть на тот, на котором, как говорят, «висит» (т.е. назначен) обработчик.
+    В коде ниже button выводит своё содержимое, используя this.innerHTML: -->
+
+    <button onclick="alert(this.innerHTML)">Нажми меня</button>
+
+
+    <input type="button" value="два обработчика", id="testr">
+
+
+    <input type="button" value="обьектEvent" id="ev">
+
+    <script src="script.js"></script>
+</body>
+</html>

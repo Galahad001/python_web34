@@ -1,0 +1,19 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8">
+         <title>дз1</title> 
+         </head>
+         <body> 
+            <h1>Случайное число</h1> 
+            <button onclick="r()">Случайное число</button> 
+            <div id="randomNumber"></div> 
+
+            <script> 
+                function r() { 
+                   var randomNumber = Math.floor(Math.random() * 101);
+                    document.getElementById("randomNumber").innerHTML = randomNumber; 
+                } 
+            </script>
+        </body>
+         </html>
