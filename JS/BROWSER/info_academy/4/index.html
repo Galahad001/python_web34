@@ -1,0 +1,49 @@
+<!doctype html />
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bubbling basics</title>
+    <style>
+        #d1 {
+            border:1px solid navy;
+            height: 200px;
+            width: 200px;
+        }
+        #d2 {
+            background: skyblue;
+            height: 100px;
+            margin: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse enter / Mouse over</h1>
+
+    <div id="d1">
+    <div id="d2"></div>
+    </div>
+    
+    <p>Mouse enter <span id="s1"></span></div>
+    <p>Mouse over <span id="s2"></span></div>
+
+    <script>
+        d1.onmouseenter = function(){
+        s1.innerText = "d1"
+        console.log("d1.onmouseenter")
+        }
+        d1.onmouseover = function(){
+        s2.innerText = "d1"
+        console.log("d1.onmouseover")
+        }
+        d2.onmouseenter = function(){
+        s1.innerText = "d2"
+        console.log("d2.onmouseenter")
+        }
+        d2.onmouseover = function(){
+        s2.innerText = "d2"
+        console.log("d2.onmouseover")
+        }
+    </script>
+</body>
+</html>

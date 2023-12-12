@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        div{
+            background-color: navy;
+            height: 255px;
+            width: 255px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Рандомное формирование цвета -->
+
+    <!-- <div id="colorB"></div> -->
+
+    <!-- <br> -->
+    <div id="b2"></div>
+    
+    <script>
+        // let i = document.getElementById('colorB')
+        // i.addEventListener("click", function(){
+        //     i.style.backgroundColor = "rgb(" + 
+        //     Math.round(255 * Math.random()) + 
+        //     "," +
+        //     Math.round(255 * Math.random()) + 
+        //     ',' +
+        //     Math.round(255 * Math.random()) +
+        //     ")" ;
+        // })
+
+        let b = document.getElementById('b2')
+        b.addEventListener("mousemove", function(e){
+            b.style.backgroundColor = "rgb(127," + e.pageX + "," + e.pageY + ")" ;
+            console.log(e.pageX +'-'+e.pageY)
+        })
+    </script>
+</body>
+</html>

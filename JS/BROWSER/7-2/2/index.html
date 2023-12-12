@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            position: relative;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            margin: 0;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Всплытие - КОГДА на элементе происходит событие, обработчик сначала срабатывает на нем, потом он движется вверх по цепочке родителей -->
+
+    <form onclick="alert('FORM')">FROM
+    <div onclick="alert('DIV')">DIV
+    <p onclick="alert('P')">P
+    </p>
+    </div>
+    </form>
+
+    <!-- Event.target - позволяет получить самый глубокий элемент, называется целевой элемент -->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

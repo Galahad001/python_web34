@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Создать html-страницу со вкладками. С левой стороны страницы отображается несколько вкладок, по которым можно переключаться. У каждой вкладки есть свое содержимое, но в один момент
+времени отображается содержимое только активной вкладки.  -->
+    
+
+    <ul>
+        <li><button onclick="test1()">Блок 1</button></li>
+        <li><button onclick="test2()">Блок 2</button></li>
+        <li><button onclick="test3()">Блок 3</button></li>
+    </ul>
+
+    <div id="d1">
+        123
+    </div>
+    <div id="d2">
+        456
+    </div>
+    <div id="d3">
+        789
+    </div>
+
+
+    <script>
+        let c = document.getElementsByTagName('div')
+        for(let i =0; i<c.length; i++){
+            c[i].style.display = 'none'
+        }
+
+
+
+        function test1(){
+            document.getElementById('d1').style.display = 'block'
+            document.getElementById('d2').style.display = 'none'
+            document.getElementById('d3').style.display = 'none'
+        }
+        function test2(){
+            document.getElementById('d2').style.display = 'block'
+            document.getElementById('d1').style.display = 'none'
+            document.getElementById('d3').style.display = 'none'
+        }
+        function test3(){
+            document.getElementById('d3').style.display = 'block'
+            document.getElementById('d1').style.display = 'none'
+            document.getElementById('d2').style.display = 'none'
+        }
+    </script>
+</body>
+</html>

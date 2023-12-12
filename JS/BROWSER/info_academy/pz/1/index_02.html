@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body onmousemove="test(event)" id="k">
+    <!-- Создать html-страницу с div, который занимает всю ширину
+и высоту экрана. При движении мышкой внутри этого div, выводить текущие координаты мышки. При клике кнопкой мыши туда
+же, выводить, какой именно кнопкой был совершен клик (правой
+или левой). -->
+    <div>
+        <span id="x"></span><span>-</span><span id="y"></span>
+    </div>
+
+
+    <script>
+        function test(e){
+            document.getElementById('x').innerHTML = e.pageX
+            document.getElementById('y').innerHTML = e.pageY
+        }
+
+
+        document.getElementById('k').addEventListener('click', function(e){
+            console.log('Лево')
+        })
+
+        document.getElementById('k').addEventListener('contextmenu', function(e){
+            console.log('Право')
+        })
+    </script>
+</body>
+</html>

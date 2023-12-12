@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Создать html-страницу, на которой будет кнопка и текст. При
+нажатии на кнопку, текст должен скрываться. При повторном нажатии – текст должен снова отображаться.  -->
+
+<button onclick="test()">Скрыть/Показать</button>
+<div id="txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia perspiciatis laboriosam neque explicabo modi maxime temporibus quas ipsam assumenda nulla dicta, nam praesentium velit necessitatibus. Nostrum ea delectus fuga magnam!</div>
+
+
+<script>
+    let w = false
+    function test(){
+        w = !w
+        if(w){
+            document.getElementById('txt').style.display='none'
+        } else{
+            document.getElementById('txt').style.display = 'block'
+        }
+    }
+</script>
+
+</body>
+</html>

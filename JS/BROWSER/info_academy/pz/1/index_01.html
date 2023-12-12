@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Создать html-страницу для генерации случайных чисел. На
+странице должна быть кнопка, при нажатии на которую случайное
+целое число от 0 до 100 выводится в div -->
+
+
+    <div>
+        <p id="random"></p>
+        <button onclick="test()">Нажми!</button>
+    </div>
+    
+    <script>
+        
+        function test(){
+            document.getElementById('random').innerHTML = Math.round(Math.random() * 100)
+            
+        }
+    </script>
+</body>
+</html>

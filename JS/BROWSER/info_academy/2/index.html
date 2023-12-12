@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+        }
+        div {
+        background: navy;
+        height: 50px;
+        width: 100px;
+        }
+    </style>
+</head>
+
+<body onclick="out.innerHTML = 'Клик был сделан по' + event.target.nodeName; console.log(event)">
+    <!-- Код выше - по id ищем элемент и перезаписываем его на новое содержимое. Обращаемся к обьекту события, своиство tdrget - указывает на обьект события на котором оно произошло. nodeName - имя узла над которым произошло событие  -->
+
+    <div></div>
+    <p id="out"></p>
+
+
+    <!-- screenX, screenY — координаты курсора относительно экрана монитора
+        ■ pageX, pageY  — координаты относительно начала
+        веб-страницы
+        ■ clientX, clientY — координаты относительно клиентской части окна браузера.  -->
+        
+
+    <script src="script.js"></script>
+</body>
+</html>

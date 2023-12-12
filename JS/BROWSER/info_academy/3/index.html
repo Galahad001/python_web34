@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+            height: 1000px;
+            margin: 0;
+        }
+        div{
+            background-color: navy;
+            height: 50px;
+            width: 100px;
+            position: absolute;
+            transition: 2s all;
+        }
+    </style>
+</head>
+<body onclick="moveDiv(event); console.log(event.clientX + '-' + event.clientY); console.log(event.screenX + '-' + event.screenY); console.log(event.pageX + '-' + event.pageY)">
+    <div id="test"></div>
+
+
+
+
+
+    <!-- Все стилевые атрибуиы элемента собраны в коллекции element.style -есть два доступа к компонентам (В виде обьектного синтаксиса) -->
+    <!-- element.style.left
+         element.style ['left'] -->
+         <!-- Все атрибуты со знаками - в js нидопустимы (без [] - с ними можно). JS думает что это арифтическая операция -->
+    
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

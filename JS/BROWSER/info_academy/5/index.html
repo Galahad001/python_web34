@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            position: relative;
+        }
+        #gun, #bullet, #aim {
+            position: absolute;
+        }
+        #bullet, #aim {
+            border-radius: 50%;
+        }
+        #gun {
+            background: navy;
+            height: 20px;
+            left: 0;
+            top: 50px;
+            width: 50px;
+        }
+        #bullet {
+            background: khaki;
+            height: 20px;
+            left: 30px;
+            top: 50px;
+            width: 20px;
+            z-index: -1;
+        }
+        #aim {
+            background: red;
+            height: 30px;
+            left: 200px;
+            top: 45px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body  onkeydown="keyHandler(event)">
+    <!-- «keypress» -->
+    <h1>Press space</h1>
+    <div id="gun"></div>
+    <div id="bullet"></div>
+    <div id="aim"></div>
+
+
+
+    <script>
+        function keyHandler(e){
+            // Проверяем нажата ли кнопка и не летит ли снаряд
+            console.log(e)
+            if(e.code == "Space" && !onFly) {
+                onFly = true;
+                moveBullet();
+            }
+            if(e.code == "Escape" && onFly) {
+                onFly = false;
+                bulletX = 30;
+                bullet.style.left = bulletX + "px";
+            }
+        }
+
+        // Начальная точка снаряла
+        var bulletX = 30;
+        var onFly = false;
+        function moveBullet() {
+            if(onFly){
+                bulletX += 5;
+                if(bulletX >= 200){
+                    bulletX = 30;
+                    onFly = false;
+            }
+            else {
+                setTimeout(moveBullet, 50);
+            }
+            bullet.style.left = bulletX + "px";
+            }
+        }
+       </script>
+
+
+</body>
+</html>
