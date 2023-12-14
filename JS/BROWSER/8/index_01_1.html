@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .i1{
+            width: 80px;
+            height: 40px;
+            color: rgb(49, 174, 27);
+        }
+        .i2{
+            width: 100px;
+            height: 30px;
+            color: red;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="i1">ТЕКСТ</div>
+    
+    <div>
+        <button id="w1" onclick="f1()">Изменить</button>
+        <button id="w2" onclick="f2()">Удалить</button>
+        <button id="w3" onclick="f3()">Проверка наличия</button>
+    </div>
+
+
+
+    <script>
+        function f1(){
+            document.getElementsByClassName('i1')[0].classList.add('i2')
+        }
+        function f2(){
+            document.getElementsByClassName('i1')[0].classList.remove('i2')
+        }
+        function f3(){
+            let i = document.getElementsByClassName('i1')[0].classList.contains('i2')
+            if (i == true){
+                alert("Да")
+            }
+        }
+    </script>
+</body>
+</html>

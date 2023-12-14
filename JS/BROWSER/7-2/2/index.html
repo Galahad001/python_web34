@@ -34,15 +34,18 @@
     
     <!-- Всплытие - КОГДА на элементе происходит событие, обработчик сначала срабатывает на нем, потом он движется вверх по цепочке родителей -->
 
-    <form onclick="alert('FORM')">FROM
-    <div onclick="alert('DIV')">DIV
-    <p onclick="alert('P')">P
-    </p>
-    </div>
-    </form>
+    <!-- <form id="form">FORM
+        <div>DIV
+          <p>P</p>
+        </div> -->
 
     <!-- Event.target - позволяет получить самый глубокий элемент, называется целевой элемент -->
 
+    <!-- Всплытие можно прекратить с помощью stopPropagation() -->
+    <main onclick="alert('WСюда не дойдет')">
+        <div onclick="alert('W')">Lorem ipsum dolor sit amet.</div>
+        <button onclick="event.stopPropagation()">Кнока</button>
+    </main>
 
     <script src="script.js"></script>
 </body>

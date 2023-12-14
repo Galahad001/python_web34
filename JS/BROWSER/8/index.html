@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Своиства и стили -->
+    <!-- className - получить значкение класса. Если поставить = то заменим всю строку с классами -->
+    <div id="i1" class="test1 t1"></div>
+
+
+
+    <script>
+        // Получить значение клааса
+        console.log(document.getElementById('i1').className)
+        // Добавить к существующим классам новый класс
+        document.getElementById("i1").classList.add("top2")
+        console.log(document.getElementById('i1').className)
+        // Методы classList:
+        // elem.classList.add/remove("class") – добавить/удалить класс.
+        // elem.classList.toggle("class") – добавить класс, если его нет, иначе удалить.
+        // elem.classList.contains("class") – проверка наличия класса, возвращает true/false.
+        // Кроме того, classList является перебираемым, поэтому можно перечислить все классы при помощи for..of:
+    </script>
+</body>
+</html>

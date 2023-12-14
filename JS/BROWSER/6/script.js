@@ -1,6 +1,7 @@
 // Когда браузер загружает страницу, он "читает" HTMl  и генерируею дом-обькты. Для узлов-элементов большинство атрибутов становятся свойствами дом-обьектов
 
 // ДОМ - своиства. Можно добавить свои своиства
+// Создадим новое своиство для body
 document.body.test = {
     name: 'Test',
     title: 'Imperator'
@@ -15,8 +16,9 @@ document.body.func = function(){
 document.body.func()
 
 
+
 // HTML - атрибуты
-// Если у тега есть стандартный атрибут, при парсингесоздается соответствующее свойство. Если атрибут не стандартный, выдаст undefined
+// Если у тега есть стандартный атрибут, при парсинге создается соответствующее свойство. Если атрибут не стандартный, выдаст undefined
 console.log('----------------')
 console.log(document.body.firstElementChild.id)
 console.log(document.body.lastElementChild.myAtrr)
@@ -24,7 +26,7 @@ console.log(document.body.lastElementChild.myAtrr)
 console.log(document.body.children[1].type)
 console.log(document.body.type)
 
-
+// Как получить тогда нестандартные атрибуты
 // Все атрибуты можно получить с помощью  след. методов
 console.log('-------------------')
 // Проверяет наличие атрибута
@@ -40,6 +42,10 @@ console.log(document.body.getAttribute('news'))
 
 // Получить все атрибуты
 console.log(document.body.attributes)
+
+
+
+
 
 
 // Получить полностью элемент вместе с тегами

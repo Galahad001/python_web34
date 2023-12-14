@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .alert{
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff048;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Изменение документа DOM -->
+    <div class="alert">
+        <p>Всем привет!</p>
+    </div>
+
+    <div id="p">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+    
+
+
+  
+
+    <!-- Создание элемента - узел можно создать двумя способами -->
+    <script>
+        // let i = document.createElement('div')
+        // let text = document.createTextNode('Xaxaxaxa')
+
+        // Создание сообщения
+        let i = document.createElement('div')
+        i.className= 'alert'
+        i.innerHTML = '<p>здоровеньки</p>'
+        // Теперь элемент надо вставить в html
+        // document.body.after(i)
+
+
+        // ПРИММЕР
+        let b = document.getElementById('p')
+        b.before('before')
+        b.after('after')
+
+        let c = document.createElement('h1')
+        c.innerHTML = 'перед'
+        b.prepend(c)
+
+        let w = document.createElement('h1')
+        w.innerHTML = 'после'
+        b.append(w)
+
+
+
+        
+
+        
+    </script>
+</body>
+</html>

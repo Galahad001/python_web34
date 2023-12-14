@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Своиство style -->
+    <!-- Свойство elem.style – это объект, который соответствует тому, что написано в атрибуте "style". -->
+    <div id="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas at amet, et esse ullam laudantium recusandae doloribus aliquam quae, rerum laborum, sapiente illo optio! Dicta quidem dignissimos officiis quaerat mollitia.</div>
+
+    <script>
+        document.getElementById('test').style.backgroundColor = prompt('Введите задний фон', 'white')
+
+        document.getElementById('test').style.color = prompt('Введите цвет текста', 'black')
+
+        document.getElementById('test').style.height = prompt('Введите высоту', '100px')
+
+
+        // getComputedStyle - прочитать значение стиля
+        let i = getComputedStyle(document.getElementById('test'))
+        console.log(i.backgroundColor)
+        console.log(i.height)
+    </script>
+</body>
+</html>

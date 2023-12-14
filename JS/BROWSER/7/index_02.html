@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert {
+          padding: 15px;
+          border: 1px solid #d6e9c6;
+          border-radius: 4px;
+          color: #3c763d;
+          background-color: #dff0d8;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <div id="div"></div> -->
+
+
+    <div id="test">sdsdfafaere</div>
+
+    <div class="alert" id="div">
+        <strong>Всем привет!</strong> Вы прочитали важное сообщение.
+    </div>
+    <script>
+        // Втавить html как "html", со всеми тегами и тд
+        // elem.insertAdjacentHTML(where, html)
+        // Первый параметр - это указатель куда по отношению к элементу производить вставку
+// "beforebegin" – вставить html непосредственно перед elem,
+// "afterbegin" – вставить html в начало elem,
+// "beforeend" – вставить html в конец elem,
+// "afterend" – вставить html непосредственно после elem.
+// ВТОРОЙ параметр это html 
+        div.insertAdjacentHTML('beforebegin', '<p>ТЕСТ</p>')
+        div.insertAdjacentHTML('afterend', '<p>Пока</p>');
+        div.insertAdjacentHTML('beforeend', '<p>Пока</p>');
+        div.insertAdjacentHTML('afterend', '<p>Пока</p>');
+
+
+
+        // Удаление узлов
+        // setTimeout(() => test.remove(), 1000)
+
+
+
+        // Клонирование узлов
+        let div2 = div.cloneNode(true); // клонировать сообщение
+        div2.querySelector('strong').innerHTML = 'Всем пока!'; // изменить клонированный элемент
+
+        div.after(div2);
+
+    </script>
+</body>
+</html>
