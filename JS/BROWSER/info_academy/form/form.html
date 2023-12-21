@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- форма должна отправлять данные на сервер, который передал клиенту страницу сайта,
+на которой расположена форма -->
+<form action='' method='GET' id="test">
+    <input type='submit' value='Send'>
+    </form>
+    <!-- Данная форма обращается к корню сайта -->
+
+
+    <!-- Форм на одной страницы может быть несколько. У каждой может быть свой метод и адресат. Для работы с формами при помощи JS обьект document имеет мпециальный массив document.forms.  При создании новой формы в эту коллекцию добавляется
+    соответствующий элемент.
+       Например, если на
+        данной HTML-странице размещено две формы, то в кол-
+        мы лекции document.forms будет два элемента (document.forms[0] и document.forms[1]), , отвечающих каждый за
+        «свою» форму. Порядок форм в коллекции соответствует
+        порядку из объявления в HTML-коде  -->
+    
+    <script>
+        let i = document.forms
+        console.log(i)
+    </script>
+</body>
+</html>

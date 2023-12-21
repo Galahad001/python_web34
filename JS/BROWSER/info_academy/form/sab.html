@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- События -->
+        <!-- change -->
+        <!-- Срабатывает по окончании изменения элемента -->
+        <!-- Для текстовых input это означает потеря фокуса -->
+        <input type="text" onchange="alert(this.value)">
+
+        <!-- Для select, checbox/radio событие запускается сразу помле изменения значения -->
+        <select onchange="alert(this.value)">
+            <option value="">Выберите что-нибудь</option>
+            <option value="1">Вариант 1</option>
+            <option value="2">Вариант 2</option>
+            <option value="3">Вариант 3</option>
+        </select>
+
+        
+    <!-- input -->
+        <!-- Событие input срабатывает каждый раз при изменении значения. 
+        Работает при любых изменниях значения -->
+        <input type="text" id="input"> oninput: <span id="result"></span>
+        <script>
+            input.oninput = function() {
+                result.innerHTML = input.value;
+            };
+        </script>
+</body>
+</html>

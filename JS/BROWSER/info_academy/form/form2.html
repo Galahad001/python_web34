@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html>
+<head>
+	<style>
+	#logForm{
+		background-color:#5599EE;
+		display:block;
+		height:	160px;
+		padding:20px;
+		width:	400px;
+	}
+	#formText{
+		color:	white;
+		float:	left;
+		font-size:	40px;
+		font-weight:bold;
+		height:	200px;
+		width:	200px;
+	}
+	.rounded{
+		border-radius:15px;
+		border-width: 0;
+		display:block;
+		height:	30px;
+		margin:	10px 0;
+		padding:0;
+		width:	170px;
+	}
+	#enter{
+		background-color:green;
+		color:white;
+		text-align:	center;
+	}
+	</style>
+</head>
+<body>
+
+	<form method="GET" action="" id="logForm">
+		<div id="formText">LogForm</div>
+		<select class="rounded" name="city">
+			<option value="Kiev">Kiev</option>
+			<option value="Nikolaev">Nikolaev</option>
+			<option value="Odessa">Odessa</option>
+			<option value="" disabled selected hidden> City</option>
+		</select>
+		<input type="text" name="login" class="rounded" placeholder=" login"/>
+		<input type="password" name="password" class="rounded" placeholder=" password"/>
+		<input type="submit" id="enter" class="rounded" value="ENTER"/>
+	</form>
+</body>
+</html>

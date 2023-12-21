@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{font-family:"Courier New", Courier,
+         monospace;}
+        </style>
+</head>
+<body>
+    <!-- Элементы формы это обьекты которые будут передаватся на сервер при отправки формы. Это те элементы в которые можно чтото ввестиЮ выбрать или поменять значение -->
+    <!-- Не все что содердит форма считается ее элементами. Надписи, рисунки, блоки, разрывы строк и прочие средтва разметки. Тем немение все что заключено в тег форм - все элементы являются дочерними для формы -->
+    <!-- Есть две колекции для отличия элементов формы и ее дочерних элементов
+       Колекция elements содержит только элемемнты формы
+       коллекция children - все дочерние обьекты
+     -->
+    
+     <h2>Add new contact</h2>
+<form method='GET'>
+<b>Name</b><input type="text" name="name" placeholder=
+ "Enter name"/><br/><br/>
+<input type="submit" value="Save"/>
+<input type="button" value="One more phone"
+onclick="add_click()" style="margin-left:50px" />
+<br/><br/>
+Phone number <input type="text"
+name="phone" id="ph" placeholder=
+"Enter phone number" />
+Phone type <select name="type">
+<option value="1" selected>Cellular</option>
+<option value="2">Home</option>
+<option value="3">Work</option>
+</select>
+Priority <input type="radio"
+name="main" value="1" checked />
+</form>
+
+
+<script>
+    let i = document.forms[0]
+    console.log(i.elements)
+    console.log(i.children)
+</script>
+
+
+<!-- Форма передает данные только из тех элементов, которым дано программное имя (определен атрибут name). -->
+
+</body>
+</html>

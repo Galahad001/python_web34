@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Создать html-страницу с формой для логина пользователя и
+галочкой «Запомнить меня». После заполнения формы вывести на
+экран: «Привет, Имя! Я тебя запомнил/не запомнил».  -->
+        <form action="" name="f" method="GET">
+            <p>Логин</p>
+            <input name="in1" type="text">
+            <p>Пароль</p>
+            <input name="n2" type="password">
+            <div>Запомнить <input type="checkbox" name="ch"></div>
+            <input name="n3" id="btn" type="button" value="Кнопка">
+        </form>
+
+        <div id="res"></div>
+
+        <script>
+           let i = document.getElementById('btn')
+           i.onclick = function(){
+                test()
+           }
+           function test(){
+            let c = document.forms.f
+            console.log(c)
+            let b = c.elements[0].value
+            console.log(b)
+            document.getElementById('res').innerHTML = 'Привет ' + b
+
+
+            let q = c.elements.ch
+            console.log(q)
+            if (q.checked){
+                document.getElementById('res').innerHTML += '. Я тебя  запомнил'
+            } else{
+                document.getElementById('res').innerHTML += '. Я тебя не запомнил'
+            }
+           }
+
+        </script>
+    
+</body>
+</html>

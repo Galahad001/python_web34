@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            /* display: block; */
+            float: left;
+            /* color: red; */
+            width: 60px;
+        }
+        .test{
+            background-color: rgba( 136, 245, 136, 0.5);
+        }
+        .testR{
+            background-color: rgba(239, 106, 101, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Создать html-страницу с формой для регистрации пользователя. Форма должна состоять из указания почты, логина, пароля (2 раза). После заполнения формы вывести на экран: «На почту такую-то отправлено письмо с подтверждением».  -->
+
+    <form action="" method="POST">
+        <div><label>Email:"</label> <input  name='n1' type="email"></div>
+        <div><label>Логин: </label><input  name='n2' type="text"></div>
+        <div><label>Пароль:</label> <input name='n3' id="pass"  type="password"></div>
+        <div><label>Пароль:</label> <input name='n4' id="pass2"  type="password"></div>
+        <input type="button" value="Отправить" id="btn">
+    </form>
+
+    <div id="msg"></div>
+
+    <script>
+        let i = document.forms[0]
+        let b = document.getElementById('btn')
+        b.onclick = function(){
+            test()
+        }
+        function test(){
+            let p1 = i.elements.n3.value
+            let p2 = i.elements.n4.value
+            // console.log(p1)
+            if (p1 === p2){
+                document.getElementById('pass').setAttribute('class', 'test')
+                document.getElementById('pass2').setAttribute('class', 'test')
+            } else{
+                document.getElementById('pass').setAttribute('class', 'testR')
+                document.getElementById('pass2').setAttribute('class', 'testR')
+            }
+
+            document.getElementById('msg').innerHTML = 'На почту ' + i.elements.n1.value + " Отправлено письмо"
+        }
+    </script>
+    
+</body>
+</html>

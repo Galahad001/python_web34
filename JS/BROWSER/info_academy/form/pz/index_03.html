@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Создать html-страницу с формой для заполнения информации
+о пользователе. После заполнения формы вывести всю введенную
+информацию в текстовом виде -->
+
+<form action="">
+    <div><label>Имя</label> <input type="text" name="n1"></div>
+    <div><label>фамилия</label> <input type="text" name="n2"></div>
+    <div><label>День рождения</label> <input type="date" name="n3"></div>
+    <div><label>Страна</label> 
+        <select id="c">
+            <option id="r" value="Россия">Россия</option>
+            <option id="t" value="Турция">Турция</option>
+            <option id="k" value="Китай">Китай</option>
+        </select>
+    </div>
+    <div><label>Город</label>
+        <select>
+            <option id="city1" value="Сочи">Сочи</option>
+            <option id="city2" value="Москва">Москва</option>
+            <option id="city3" value="Питер">Питер</option>
+        </select>
+    </div>
+    
+    <p><p>Пол:</p></p>
+    <div>
+        <input type="radio" id="rad1" name="test" value="муж" />
+        <label for="rad1">Мужской</label>
+
+    </div>
+    <div>
+        <input type="radio" id="rad2" name="test" value="жен" />
+        <label for="rad2">Женский</label>
+    </div>
+
+    <div>
+        <label>Навыки:</label>
+        <input type="checkbox" value="HTML"><span>HTML</span>
+        <input type="checkbox" value="CSS"><span>CSS</span>
+        <input type="checkbox" value="JS"><span>JS</span>
+        <input type="checkbox" value="PHP"><span>PHP</span>
+        <input type="checkbox" value="C++"><span>C++</span>
+        <input type="checkbox" value="JAVA"><span>JAVA</span>
+        <input type="checkbox" value="C#"><span>C#</span>
+    </div>
+
+
+    <input type="button" value="Отправить" onclick="oppa()">
+
+</form>
+
+
+<table>
+    <tr>
+        <td>Имя</td>
+        <td class="testr"></td>
+    </tr>
+    <tr>
+        <td>Фамилия</td>
+        <td class="testr"></td>
+    </tr>
+    <tr>
+        <td>Дата рождения</td>
+        <td class="testr"></td>
+    </tr>
+    <tr>
+        <td>Страна</td>
+        <td class="testr"></td>
+    </tr>
+    <tr>
+        <td>Город</td>
+        <td class="testr"></td>
+    </tr>
+    <tr>
+        <td>Пол</td>
+        <td class="testr"></td>
+    </tr>
+    <tr>
+        <td>Навыки</td>
+        <td class="testr"></td>
+    </tr>
+</table>
+
+
+<script>
+   let i = document.getElementById("c")
+   i.onclick = function(){
+    
+    console.log(i.value)
+    if(i.value == 'Россия'){
+            document.getElementById('city1').textContent = 'Сочи'
+            document.getElementById('city1').setAttribute('value', 'Сочи')
+
+            document.getElementById('city2').textContent = 'Москва'
+            document.getElementById('city2').setAttribute('value', 'Москва')
+
+            document.getElementById('city3').textContent = 'Питер'
+            document.getElementById('city3').setAttribute('value', 'Питтер')
+    } else if(i.value == 'Турция'){
+            document.getElementById('city1').textContent = 'Стамбул'
+            document.getElementById('city1').setAttribute('value', 'Стамбул')
+            
+            document.getElementById('city2').textContent = 'Анталья'
+            document.getElementById('city2').setAttribute('value', 'Анталья')
+
+            document.getElementById('city3').textContent = 'Измир'
+            document.getElementById('city3').setAttribute('value', 'Измир')
+            
+    } else if(i.value == 'Китай'){
+            document.getElementById('city1').textContent = 'Пекин'
+            document.getElementById('city1').setAttribute('value', 'Пекин')
+
+            document.getElementById('city2').textContent = 'Шанхай'
+            document.getElementById('city2').setAttribute('value', 'Шанхай')
+            
+            document.getElementById('city3').textContent = 'Ханчжоу'
+            document.getElementById('city3').setAttribute('value', 'Ханчжоу')
+    }
+    
+    console.log(document.getElementById('city1'))
+   }
+
+
+
+   function oppa(){
+    let f = document.forms[0]
+    let i = document.querySelectorAll('.testr')
+    i[0].textContent = f.elements[0].value
+    i[1].textContent = f.elements[1].value
+    i[2].textContent = f.elements[2].value
+    i[3].textContent = f.elements[3].value
+    i[4].textContent = f.elements[4].value
+
+    let rad = document.getElementById('rad1')
+    console.log(rad.checked)
+    // if(rad.checked){
+        // alert('asd')
+    // }
+    i[5].textContent = f.elements[5].value
+    i[6].textContent = f.elements[7].value
+   }
+
+</script>
+</body>
+</html>
