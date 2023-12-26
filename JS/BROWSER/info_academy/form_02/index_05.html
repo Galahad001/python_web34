@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Registration form</title>
+        <style>
+            #regForm b{
+            display:inline-block;
+            padding-top:5px;
+            width:100px;
+            }
+            #regForm input[type="submit"]{
+            margin: 15px 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method = "GET" id = "regForm" onsubmit = "return checkForm()">
+
+        <b>Имя:</b>
+        <input type = "text" id = "name1"
+        name = "name1" required /><br/>
+
+        <b>Фамилия:</b>
+        <input type="text" id="name2" name="name2"
+        required /><br/>
+
+        <b>Логин:</b>
+        <input type="text" id="login" name="login"
+        required /><br/>
+
+        <b>Пароль:</b>
+        <input type="password" id="pas1"
+        name="pass" required /><br/>
+
+        <b>Повтор пароля:</b>
+        <input type="password" id="pas2" required /><br/>
+
+        <b>Email:</b>
+        <input type="email" id="email" name="email"
+        required /><br/>
+
+        <b>Номер:</b>
+        <input type="phone" id="phone" name="phone"
+        required /><br/>
+        
+        <b>Code:</b>
+        <input type="number" id="code" name="code"
+        required /><br/>
+
+        <label>
+        <input type="checkbox" name="accept" required />
+       Слыш, галочку поставь</label><br/>
+
+        <input type="submit" value="Register" />
+
+        </form>
+
+        <script>
+            function checkForm(){
+            // Проверка имени
+             let n1 = document.getElementById("name1").value;
+             let t1 = /^[A-Z][a-z]*(-[A-Z][a-z]*)*$/;
+             if(!t1.test(n1)){
+                alert("Имя некоректно");
+                return false;
+             }
+
+            //  Проверка фамилии
+            let n2 = document.getElementById("name2").value;
+            if(!t1.test(n2)){
+                alert("Фамилия некоректно");
+                return false;
+            }
+
+
+            // Проверка пароля
+            let p1 = document.getElementById("pas1").value;
+            if(! /\d/.test(p1)){
+                alert("Пароль не имеет цифр");
+                return false;
+            }
+            if(! /[A-Z]/.test(p1)){
+                alert("В пароле нет больших букв");
+                return false;
+            }
+            if(! /[a-z]/.test(p1)){
+                alert("В пароле нет маленьких букв");
+                return false;
+            }
+           
+            // Вторая проверка пароля
+            let p2 = document.getElementById("pas2").value;
+            if(p1 != p2){
+                alert("Несовпадение паролей");
+                return false;
+            }
+            
+            // Проверка посты
+            let eMail = document.getElementById("email").value;
+            let te = /^\w+([-+.’]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/ ;
+            if(! te.test(eMail) ){
+                alert("e-Mail некоректен");
+                return false;
+            }
+           
+            // Проверка телефона
+            let phone = document.getElementById("phone").
+            value;
+            if(! /^\+?\d{6,12}$/.test(phone) ){
+                 alert("Телефон некоректен");
+                 return false;
+            }
+           
+           
+            let cod = document.getElementById("code").value;
+            if(/\D/.test(cod) ){
+                alert("Code is incorrect");
+                return false;
+            }
+           
+
+            // Проверка флажка (Политика конф.)
+            let agree = document.getElementById("accept").value;
+            if(agree!="on"){
+                alert("Вы должны принять правила");
+                return false;
+            }
+
+            return true;
+            }
+</script>
+</body>
+</html>

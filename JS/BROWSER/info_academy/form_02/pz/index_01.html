@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- мы хотим проверить строку на предмет номера телефона в международном формате, наподобие «+380512670053» — 12 цифр (спецсимвол «\d») и знак
+«+» в начале строки («^+»), кроме номера, других символов
+не допускается, то есть после цифр должен следовать конец
+строки («$»). Правильным ли будет следующий шаблон:
+template = /^+\d{12}$/ -->
+    
+
+<script>
+    template = /^\+\d{12}$/
+    console.log(template.test("+380501234567"));
+</script>
+</body>
+</html>

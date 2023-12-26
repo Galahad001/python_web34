@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Проверка достоверности форм обычно проводится
+        в несколько шагов -->
+
+        <!-- Первый, простейший шаг заключается в указании
+правильных атрибутов для элементов формы. С вводом
+в действие стандарта HTML 5 -->
+
+         <!-- Второй этап реализуется путем контроля содержимого элементов формы непосредственно перед ее отправкой -->
+
+        <!-- Третий этап проверки достоверности выполняется
+уже на стороне сервера, на который форма отсылает данные. -->
+
+
+<!-- «return» перед именем обработчика. Это будет транслировать (пересылать) результат, возвращенный функцией, дальше в механизм автоматической
+отправки формы. -->
+    <form method="GET" onsubmit="return testForm(event)" id="poll">
+    <!-- required -  проверка на пустоту. Если значение элемента не ведено то форма не отправится -->
+        <input type="text" placeholder="имя" id="name" required>
+    </form> 
+
+
+    <script>
+        function testForm(event){
+        var nameText = document.getElementById("name").value;
+        if(nameText.length < 5) return false;
+        return true;
+        }
+    </script>
+    
+</body>
+</html>
