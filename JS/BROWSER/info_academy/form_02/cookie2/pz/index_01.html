@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #area{
+            width: 350px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <textarea id="area" placeholder="Напишите сообщение здесь"></textarea>
+    <br>
+    <button onclick="localStorage.removeItem('area'); area.value=''">Очистить</button>
+    <script>
+        let i = document.getElementById('area')
+        i.value = localStorage.getItem('area');
+        i.oninput = () => {
+            localStorage.setItem('area', area.value)
+            console.log(area.value)
+        };
+</script>
+</body>
+</html>
+<!-- Обратите внимание на две ключевые части этого кода: текстовое поле и кнопка "Очистить".
+
+Кнопка "Очистить" выполняет две функции: удаляет элемент с ключом "area" из localStorage и очищает текстовое поле.
+
+В коде JavaScript текстовое поле события "oninput" обновляет значение элемента "area" в localStorage каждый раз, когда пользователь вводит текст в поле.
+
+Функция localStorage.getItem('area') позволяет извлечь значение элемента "area" из localStorage, и эта функция вызывается при загрузке страницы для восстановления текста из предыдущего сеанса.
+
+Таким образом, этот код сохраняет и загружает текст из текстового поля между сеансами, и пользователи могут очистить поле с помощью кнопки "Очистить". -->

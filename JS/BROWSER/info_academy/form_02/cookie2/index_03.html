@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        localStorage.test0 = 0
+        localStorage.test3 = 3
+        localStorage.test4 = 4
+        localStorage.test5 = 5
+        localStorage.test6 = 6
+
+        // Перебор ключей
+        // Обьекты веб-хранилтща нельзя перебрать в цикле. они не итерируемы
+        // Можно пройти по ним как по обычным массивам
+        for(let i=0; i < localStorage.length; i++){
+            let key = localStorage.key(i)
+            console.log(`${key}: ${localStorage.getItem(key)}`)
+        }
+    </script>
+</body>
+</html>

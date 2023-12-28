@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Объекты веб-хранилища localStorage и sessionStorage позволяют хранить пары ключ/значение в браузере. -->
+
+    <!-- Что в них важно – данные, которые в них записаны, сохраняются после обновления страницы (в случае sessionStorage) и даже после перезапуска браузера (при использовании localStorage). -->
+
+    <!-- Объекты хранилища localStorage и sessionStorage предоставляют одинаковые методы и свойства:
+        setItem(key, value) – сохранить пару ключ/значение.
+
+        getItem(key) – получить данные по ключу key.
+
+        removeItem(key) – удалить данные с ключом key.
+
+        clear() – удалить всё.
+
+        key(index) – получить ключ на заданной позиции.
+
+        length – количество элементов в хранилище. -->
+
+        <!-- localStorage - это обьект на все вкладки и окна в рамках источника(один и тот же домен/протокол/порт) 
+        Данные не имеют срока давности, по которому истекают и удаляются. Сохраняются после перезагрузки браузера и даже ОС-->
+
+        <script>
+            localStorage.setItem('test',1)
+        </script>
+    
+</body>
+</html>

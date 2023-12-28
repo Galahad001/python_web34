@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Обьект sessionStorage используется гораздо реже
+    
+    Своиства и методы такие же но:
+        -sessionStorage существует только в рамках текущей вкладки браузера
+        - Другая вкладка с той же страницей будет иметь другое хранилище.
+        - Данные продолжают существовать после перезагрузеи страницы, но не после закрытия/открытия вкладки-->
+
+
+        <script>
+
+            sessionStorage.setItem('testr', 100000)
+            console.log(sessionStorage.getItem('testr'))
+
+        </script>
+    
+</body>
+</html>

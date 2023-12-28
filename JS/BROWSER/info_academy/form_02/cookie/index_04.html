@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+        <body onload="checkReg()">
+
+            <div id=’regDiv’></div>
+
+            <script>
+                document.cookie = 'test= 1'
+
+            function checkReg(){
+            var x = document.cookie;
+            var rd = document.getElementById("regDiv");
+            var s = x.split(';');
+            var cookieObject = {};
+            var c;
+            for(var i=0; i < s.length; i++){
+                c = s[i].split('=');
+                cookieObject[c[0]] = c[1];
+            }
+            if('register' in cookieObject){
+            rd.innerHTML = "Hello, " + cookieObject['register'];
+            }
+            else{
+                rd.innerHTML ="Name: <input type='text' id='name'/> <input type='butto' value='Register' onclick='regClick()'/>";
+            }
+            }
+            function regClick(){
+                var inputName = document.
+                getElementById("name");
+                var name = inputName.value;
+                var expDate = new Date;
+                expDate.setTime((new Date).
+                getTime() + 60*1000);
+                document.cookie ="register="+name+";expires="+ expDate.toGMTString()+";path=/";
+                checkReg();
+            }
+            </script>
+            
+        </body>
+</html>
