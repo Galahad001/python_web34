@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Выход">
+    <form method="GET" onsubmit="return test()">
+        <h2>Анкета</h2>
+        <label for="name">Имя: </label>
+        <input type="text"  id="name" required>
+        <label for="l_name">Фамилия</label>
+        <input type="text"  id="l_name" required>
+
+        <br>
+
+        <label for="br">День рождения: </label>
+        <input type="date" id="br">
+        <label for="gen">Пол: </label>
+        <select id="gen" required  onclick="t()">
+            <option value="мужской">Мужской</option>
+            <option value="женский">Женский</option>
+        </select>
+
+        <br>
+
+        <label for="phone">Телефон: : </label>
+        <input type="text"  id="phone">
+        <label for="skype">Скайп: </label>
+        <input type="text"  id="skype">
+
+        <br>
+
+        <input type="submit" value="Сохранить">
+    </form>
+    
+
+    <script>
+        function test(){
+            let n = document.getElementById('name').value
+            let reg_name = /^[A-Z][a-z]*(-[A-Z][a-z]*)*$/
+            console.log('jn')
+            if(!reg_name.test(n)){
+                alert('aasd')
+                return false
+            }
+            
+
+            
+            let l_n = document.getElementById('l_name').value
+            if(!reg_name.test(l_n)){
+                alert("Некоректная фамилия");
+                return false
+            }
+
+            let b = document.getElementById('br').value
+            let reg =/\d{4}\-\d{2}\-\d{2}/
+            // /\^([0-9][0-9][0-9][0-9])\-([0-1][0-9])\-([0-3][0-9])/
+            if(!reg.test(b)){
+                alert('s')
+                return false
+            }
+
+            let phone = document.getElementById('phone').value
+            let reg_phone = /^\+7([-(])*\d{3}([)])*(-)*\d{3}(-)*\d{2}(-)*\d{2}$/
+            if (!reg_phone.test(phone)) {
+                alert('Введен некоректный номер')
+                return false
+            }
+            // /^\+7\(\d{3}\)[\s.-]\d{3}[\s.-]\d/
+
+
+            let sk = document.getElementById('skype').value
+            let reg_s = /^([A-Z][a-z])*(\.)*\w+$/
+            if(!reg_s.test(sk)){
+                alert('Введен некоректный скайп')
+                return false
+            }
+            // alert('asd')
+
+            return false
+
+
+        }
+
+        function t(){
+                        console.log(document.getElementById('gen').value)
+                    }
+
+
+    </script>
+</body>
+</html>

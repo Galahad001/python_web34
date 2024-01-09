@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="GET" onsubmit = "return checkForm()">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="emailUser" required>
+
+        <br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" id="passwordUser" required>
+        <br>
+
+        <label for="password2">Повторите пароль:</label>
+        <input type="password" name="password2" id="passwordUser_2" required>
+
+        <br>
+
+        <input type="submit" name="btn" id="btn" value="Регистрация">
+
+    </form>
+    
+    <input type="button" onclick="test()">
+    <script>
+        function checkForm(){
+            // Проверка email
+            let mail = document.getElementById('emailUser').value
+            let reg = /^\w+([-+.,]\w+)*@\w+([-.]\w+)*\w+([-.]\w+)*$/
+            if(! reg.test(mail)){
+                alert("Введите корректный email")
+                return false
+            }
+
+            // Проверка пароля
+            let password = document.getElementById('passwordUser').value
+            if(!/\d/.test(password)){
+                alert("Пароль должен содержать цифры")
+                return false
+            }
+            if(!/[A-Z]/.test(password)){
+                alert('Пароль должен иметь заглавную букву')
+                return false
+            }
+            if(!/[a-z]/.test(password)){
+                alert('Пароль должен иметь строчную букву')
+                return false
+            }
+            let b = password.length
+            if(b <= 6){
+                alert('Введите минимум 6 символов')
+                return false
+            }
+
+            // Вторая проверка пароля
+            let password2 = document.getElementById('passwordUser_2').value
+            if(password != password2){
+                alert('Пароли не совпвдают')
+                return false
+            }
+
+            // Создаем куки
+            document.cookie = `email=${mail}; expires=Mon, Jan 01 2024 19:16:34 GMT; path=/`
+            document.cookie = `password=${password}; expires=Mon, Jan 01 2024 19:16:34 GMT; path=/`
+            document.cookie = `password_two=${password2}; expires=Mon, Jan 01 2024 19:16:34 GMT; path=/`
+        
+
+
+
+    }
+
+
+    window.onload = function(){
+
+        // Проверка есть ли в куки данные пользователя
+        if(document.cookie.indexOf('password') != -1 && document.cookie.indexOf('password_two') != -1 && document.cookie.indexOf('email') != -1){
+            // Разбиваем данные по ;
+            let i = document.cookie
+            let b = i.split(';')
+
+            // Берем список форм, затем список элементов формы
+            let form = document.forms[0]
+            let el = form.elements
+
+            // Создаем пустой обьект
+            let ob = {}
+
+            // Это для наглядности
+            // console.log(document.cookie)
+            // console.log(b)
+
+            // Перебираем куки
+            for(let i = 0; i < b.length; i++){
+                // Разделяем куки еще раз, теперь разделитель =
+                let s = b[i].split('=')
+                // console.log(s)
+                // Помещаем в обьект новые своиства
+                ob[s[0]] = decodeURIComponent(s[1])
+                // el[i].value = s[1]
+
+                // Находим email в нашем обьекте. Если нашли то вставляем его в поле
+                let reg = /^\w+([-+.,]\w+)*@\w+([-.]\w+)*\w+([-.]\w+)*$/
+                if(reg.test(ob[" email"])){
+                    emailUser.value = ob[" email"]
+                    // console.log(ob)
+                }
+
+                // То же самое с паролем. Если найдем то вставляем в поле
+                if('password' in ob){
+                    passwordUser.value = ob['password']
+                }
+
+                if(' password_two' in ob){
+                    passwordUser_2.value = ob[' password_two']
+                }
+
+                document.location.href = 'index_02.html'
+                
+
+            }
+        }else{
+            alert('Куки нет')
+        }
+    }
+        
+    </script>
+    
+
+
+</body>
+</html>

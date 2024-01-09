@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Асинхронные функции. Слово async ставится перед функцией -->
+    <!-- У слова async один простой смысл: эта функция всегда возвращает промис. Значения других типов оборачиваются в завершившийся успешно промис автоматически. -->
+
+    <input type="button" onclick="r()">
+
+
+    <script>
+        // async function test(){
+        //     return 1
+        // }
+        // test().then(alert)
+        // Так что ключевое слово async перед функцией гарантирует, что эта функция в любом случае вернёт промис.
+
+
+        // Await
+        // Ключевое слово await заставит интерпретатор JavaScript ждать до тех пор, пока промис справа от await не выполнится. После чего оно вернёт его результат, и выполнение кода продолжится.
+        async function test2(){
+            let a = new Promise((resolve, reject) =>{
+                setTimeout(() => resolve('Готово'),10000)
+            })
+
+            let res = await a
+            alert(res)
+        }
+
+        test2()
+
+        function r(){
+            alert('OK')
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Для использования Ajax в JavaSctript есть специальный объект -->
+    <!-- В старых версиях Internet Explorer (IE5 и IE6) по историческим причинам используется объект ActiveXObject 
+    Все современные браузеры имеет встроенный объект XMLHttpRequest:-->
+    
+
+    <script>
+        // let request;
+        //     if(window.XMLHttpRequest){
+        //     request = new XMLHttpRequest();
+        // }
+        // else{
+        //     request = new ActiveXObject("Microsoft.XMLHTTP");
+        // }
+
+        // Для того чтобы отправить запрос, используется метод open() и send()
+        // Метод open() инициализирует запрос для дальнейшей отправки.
+        // open(method, URL, [async, user, password])
+        // ■ method — метод HTTP запроса. Обычно это «GET»
+        // или  «POST» которые будут описаны далее, также
+        // может быть «PUT», «DELETE», и т.д.
+        // ■ URL — адрес сервера, куда будет отправлен запрос.
+        // Когда в URL указывается просто путь к файлу, например: “\data\file.txt”, что равносильно записи “http://127.0.0.1:
+        // 5500\data\file.txt”, а это значит что файл располагается
+        // локально, и запрос отправляется на локальный сервер.
+        // Когда посылается запрос на удаленный сервер, в URLадресе указывается тип протокола http или https, домен сайта
+        // и адрес самого сервера. Например, https://www.google.com.
+        // Далее идут необязательные параметры:
+        // ■ async  — указывает, будет ли запрос асинхронным
+        // или  нет. По умолчанию значение этого параметра
+        // true, это значит, что запрос будет асинхронным.
+        // ■ user и password — имя пользователя и пароль, если
+        // для запроса нужна аутентификация.
+//         Чтобы отправить запрос, используется метод send().
+
+// После того как запрос будет отправлен, на сервере
+// произойдет его обработка, и после этого вернется ответ.
+// Чтобы получить ответ с сервера, нужно подписаться на событие onreadystatechange у объекта запроса. В этом событии можно проверить состояние запроса через специальное свойство readyState, которое содержит число, обозначающее, на какой стадии находится запрос. 
+// Событие onreadystatechange срабатывает каждый раз,
+// когда readyState изменяется. Чтобы получить ответ, нужно дождаться, когда значение readyState будет равно 4. 
+// Ответ сервера на запрос можно получить через свойство response.
+
+        // let request;
+
+        // if(window.XMLHttpRequest){
+        //     request = new XMLHttpRequest();
+        // }
+        // else{
+        //     request = new ActiveXObject("Microsoft.XMLHTTP");
+        // }
+
+        // request.open("GET", "index_04.html");
+        // request.statusText = 'text'
+        // request.onreadystatechange = function(){
+        //     console.log("readyState = " + request.readyState);
+
+        //     if(request.readyState === 4 && request.status == 200){
+        //         alert(request.response);
+        //     }
+        // }
+        // request.send();
+        // Так как запрос уже был создан, инициализирован
+        // и отправлен, его состояние равняется 2 на момент, когда сработало событие onreadystatechange в первый раз.
+        // После отправки onreadystatechange срабатывает второй
+        // раз, и состояние запроса теперь 3, а это значит, что запрос
+        // был принят на сервере и сейчас обрабатывается. И когда onreadystatechange вызывается в третий раз, readyState
+        // становится равным 4.
+
+        // Также нужно проверить свойство status, которое
+        // указывает, успешно ли завершился запрос. Если зна-
+        // чение status равно 200, то запрос завершился успешно,
+        // если какое-либо другое значение, то произошла ошибка.
+        // Например, значение 404 означает, что ресурс не найден.
+
+
+
+
+
+        // Объект XMLHttpRequest также имеет свойства:
+        // ■ statusText, как и status, описывает, как завершился запрос, но в  текстовом формате. Значение 200
+        // в statusText будет означать «OK», значение 404 будет «Not Found».
+        // ■ responseType  — указывает, ответ какого типа нам
+        // пришел, также можно указать тип ожидаемого ответа.
+        // Вот все возможные типы:
+        // ■ «“”» — строка, это значение по умолчанию;
+        // ■ «text» — строка;
+        // ■ «arraybuffer» и «blob» — для бинарных данных;
+        // ■ «document» — XML-документ;
+        // ■ «json» — JSON, значение будет автоматически десериализовано
+            let request;
+            if(window.XMLHttpRequest){
+            request = new XMLHttpRequest();
+            }
+            else{
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            request.open("GET", "person.json");
+            request.responseType = "json"; //В это примере для свойства responseType указывается тип «json», с этим значением строка JSON будет автоматически десериализована в объект. Далее отправляется запрос к файлу person.json. При получении ответа в свойстве response будет уже десериализованный из JSON объект.
+            request.onreadystatechange = function(){
+            if(request.readyState ===
+            4 && request.status == 200){
+            let person = request.response;
+            console.log(person);
+            // alert(request.responseText) - Если хотим получить текст вместо обьекта. Не использовать вместе с responseType 
+            }
+            }
+            request.send();
+
+
+        
+    </script>
+    
+</body>
+</html>

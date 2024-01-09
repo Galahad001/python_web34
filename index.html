@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <h1>Forum</h1> 
+  <form onsubmit="event.preventDefault(); addMessage();"> 
+    <label for="messageInput">Message:</label> 
+    <input type="text" id="messageInput" required> 
+    <button type="submit">Send</button>
+   </form>
+    <ul id="messageList"></ul> 
+
+            <script> 
+    function addMessage()
+     { 
+      const input = document.getElementById('messageInput');
+       const message = input.value;
+        input.value = '';
+        const list = document.getElementById('messageList');
+        const newItem = document.createElement('li');
+        newItem.textContent = message;
+        list.appendChild(newItem);
+    }
+</script>
+    
+</body>
+</html>

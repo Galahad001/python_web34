@@ -16,6 +16,7 @@
     <textarea id="area" placeholder="Напишите сообщение здесь"></textarea>
     <br>
     <button onclick="localStorage.removeItem('area'); area.value=''">Очистить</button>
+    
     <script>
         let i = document.getElementById('area')
         i.value = localStorage.getItem('area');

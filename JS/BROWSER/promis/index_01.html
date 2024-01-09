@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Многие действия в js асинхронныу -->
+    <!-- Данная функция добавляет на страницу новый скрипт. Функция асинхронная, потомучто действие(загрузка скрипта) будет завершено не сеййчас а потом. Если после вызова функции есть код, он не будет ждать, пока скрипт загрзится -->
+    <!-- Событие onload описано в статье Загрузка ресурсов: onload и onerror, оно в основном выполняет функцию после загрузки и выполнения скрипта. -->
+    <script>
+        function loadScript(src, callback) {
+        let script = document.createElement('script');
+        script.src = src;
+        script.onload = () => callback(script);
+        document.head.append(script);
+        }
+
+
+        loadScript('script.js', function() {
+            newFunc(); //эта функция вызовется после того, как загрузится скрипт
+
+            loadScript('script_02.js', function(){
+
+            })
+        });
+
+        // loadScript('script.js')
+
+        // newFunction()
+    </script>
+    
+</body>
+</html>
